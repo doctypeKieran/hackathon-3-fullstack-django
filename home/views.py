@@ -4,17 +4,12 @@ from event.models import RageRoomSession
 
 # Create your views here.
 def home_page(request):
+    events = RageRoomSession.objects.all()  #
+    context = {
+        'events': events, }
 
     return render(
         request,
-        "home/home.html",
-        {
-            
-        }
+        "home/home.html", context
     )
 
-def home(request):
-    events = RageRoomSession.objects.all()  # Retrieves all events, adjust the query as needed
-    context = {
-        'events': events, }
-    return render(request, 'home.html', context)

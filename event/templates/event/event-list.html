@@ -9,6 +9,25 @@
         <div class="row">
             <h1 class="main-title">YES</h1>
         </div>
+        <div class="row justify-content-center align-items-center ">
+            {% if events %}
+    
+        {% for event in events %}
+            <div class="col-12 col-md-6 col-lg-4 justify-content-center align-items-center bg-light">
+                <h3>{{ event.title }}</h3>
+                <p>{{ event.description }}</p>
+                <p> {{.time }}</p>
+                <p>Date: {{ event.date }} | Start: {{ event.start_time }} | End: {{ event.end_time }}</p>
+                <p>Capacity: {{ event.capacity }}</p>
+                <img src="{{ event.image }}" class="fluid">
+                <p> {{ event.facilitator  }}  </p>  
+            </div>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No events available.</p>
+    {% endif %}
+        </div>
     </div>
 </section>
 {% endblock %}

@@ -51,5 +51,5 @@ class Booking(models.Model):
             raise ValidationError(_('Only staff members can approve bookings.'))
 
     def __str__(self):
-    return f"Booking for {self.session.title} by {self.participant.user.username}"
+        return f"Booking for {self.session.title} by {self.participant.user.username}"
 
