@@ -9,3 +9,26 @@ html,
 * {
     font-family: 'Poppins', sans-serif;
 }
+
+body {
+    background-color: #000;
+}
+
+/* Home Page */
+.main-title {
+    color: #FAFAFA;
+    font-size: 8rem;
+    padding: 4rem 0;
+}
+
+.hero-section {
+    height: 100%;
+}
+
+.hero-section__create {
+    background-image: url('../images/red-monkey.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 50%;
+    aspect-ratio: 1;
+}
