@@ -2,9 +2,10 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.core.exceptions import ValidationError
 from django.utils.translation import gettext_lazy as _
-
+from django.db.models.signals import post_save
+from django.dispatch import receiver
 # Fix import if broken
-from event import RageRoomSession
+
 
 ADMIN = 'ADMIN'
 STAFF = 'STAFF'
@@ -36,6 +37,8 @@ class UserProfile(models.Model):
 @receiver(post_save, sender=User)
 def create_or_update_user_profile(sender, instance, created, **kwargs):
     if created:
+        UserProfile.objects.create(user=instance)
+        from event.models import RageRoomSession
         UserProfile.objects.create(user=instance)
     else:
         instance.profile.save()
