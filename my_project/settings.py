@@ -30,7 +30,7 @@ SECRET_KEY = 'django-insecure-ozs91ikid)&d1zrjwla69pe*vw1ta1_qvm3f$6a4*crd3tf(qf
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-doctypekier-hackathon3f-ljfrt6pu6vs.ws-eu106.gitpod.io','8000-doctypekier-hackathon3f-78fgpzh2gwv.ws-eu106.gitpod.io', '8000-doctypekier-hackathon3f-6a4q2poffoi.ws-eu106.gitpod.io']
+ALLOWED_HOSTS = ['8000-doctypekier-hackathon3f-ljfrt6pu6vs.ws-eu106.gitpod.io','8000-doctypekier-hackathon3f-78fgpzh2gwv.ws-eu106.gitpod.io', '8000-doctypekier-hackathon3f-6a4q2poffoi.ws-eu106.gitpod.io', '8000-doctypekier-hackathon3f-paheb9jie8e.ws-eu106.gitpod.io']
 
 
 # Application definition
