@@ -1,6 +1,11 @@
 {& extends 'base.html' &}
 
-{% block title %}Home{% endblock %}
+{% block title %}Home
+<h1>Welcome to Our Website</h1>
+<a href="{% url 'register' user_type='general' %}" class="btn btn-primary">Register as User</a>
+<a href="{% url 'register' user_type='staff' %}" class="btn btn-secondary">Register as Staff</a>
+
+{% endblock %}
 
 {% block content %}
 <div class="container-fluid">
