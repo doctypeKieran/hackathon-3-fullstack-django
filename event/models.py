@@ -4,23 +4,15 @@ from django.core.exceptions import ValidationError
 from django.utils.translation import gettext_lazy as _
 
 # Fix import if broken
-from user import UserProfile
+from user1.models import UserProfile
 
-ADMIN = 'ADMIN'
-STAFF = 'STAFF'
 
-GENERAL_USER = 'USER'
-USER_ROLES = [
-    (STAFF, _('Staff')),
-    (GENERAL_USER, _('General User')),
-    (ADMIN,'Admin'),
-]
 
 # Create your models here.
 # Adding Models in from ideation 
 
 class RageRoomSession(models.Model):
-    facilitator = models.ForeignKey(UserProfile, on_delete=models.SET_NULL, null=True, related_name='facilitated_sessions')
+    facilitator = models.ForeignKey('user1.UserProfile', on_delete=models.SET_NULL, null=True, related_name='facilitated_sessions')
     title = models.CharField(max_length=200)
     description = models.TextField()
     date = models.DateField()
@@ -37,7 +29,7 @@ class RageRoomSession(models.Model):
         super().save(*args, **kwargs)
 class Booking(models.Model):
     session = models.ForeignKey(RageRoomSession, on_delete=models.CASCADE, related_name='bookings')
-    participant = models.ForeignKey(UserProfile, on_delete=models.CASCADE, related_name='bookings')
+    participant = models.ForeignKey('user1.UserProfile', on_delete=models.CASCADE, related_name='bookings')
     booking_time = models.DateTimeField(auto_now_add=True)
     approved = models.BooleanField(default=False)
 

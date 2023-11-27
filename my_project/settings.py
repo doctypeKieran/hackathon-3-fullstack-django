@@ -47,7 +47,7 @@ INSTALLED_APPS = [
     'about',
     'event',
     'home',
-    'user',
+    'user1',
 ]
 
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
@@ -96,7 +96,7 @@ WSGI_APPLICATION = 'my_project.wsgi.application'
 # }
 
 DATABASES = {
-    'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+    'default': dj_database_url.parse(str(os.environ.get('DATABASE_URL')))
 }
 
 
