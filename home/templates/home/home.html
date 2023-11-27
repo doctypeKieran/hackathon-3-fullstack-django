@@ -12,16 +12,16 @@
 {% block content %}
 <div class="container-fluid hero-section">
     <div class="row">
-        <div class="col-11 mx-auto my-5">
+        <div class="col-12 mx-auto my-5">
             <h1 class="main-title">RAGE ROOM</h1>
         </div>
     </div>
     <div class="row hero-section">
         <div class="col-6 hero-section__create d-flex justify-content-center align-items-center">
-            <a href="{% url 'create_event' %}" class="btn btn-primary rounded-0 btn-large px-2 create-event__btn">create event</a>
+            <a href="{% url 'create_event' %}" class="btn btn-primary rounded-0 btn-large px-5 py-3 create-event__btn">create event</a>
         </div>
-        <div class="col-6 hero-section__create d-flex justify-content-center align-items-center">
-            <a href="{% url 'create_event' %}" class="btn btn-primary rounded-0 btn-large px-2 view-events__btn">create events</a>
+        <div class="col-6 hero-section__view d-flex justify-content-center align-items-center">
+            <a href="{% url 'events-list' %}" class="btn btn-primary rounded-0 btn-large px-2 view-events__btn">view events</a>
         </div>
     </div>
 </div>
