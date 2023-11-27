@@ -20,7 +20,7 @@ USER_ROLES = [
 # Create your models here.
 # Adding Models in from ideation 
 class UserProfile(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='profile')
+    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='user1_profile')
     role = models.CharField(max_length=5, choices=USER_ROLES, default=GENERAL_USER)
     badge_number = models.CharField(max_length=5, blank=True, null=True) 
     # CREATE EMAIL FIELD
