@@ -27,7 +27,7 @@ def create_event(request):
 def join_event(request):
     if request.method == 'POST':
         form = EventJoinForm(request.POST)
-        if form.is_valid
+        if form.is_valid:
             booking = form.save(commit=False)
             booking.participant = request.user.userprofile
             booking.save()
