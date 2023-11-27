@@ -1,4 +1,6 @@
-{& extends 'base.html' &}
+
+{% extends 'base.html' %}
+
 
 {% block title %}Home{% endblock %}
 
@@ -6,11 +8,11 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-10">
-            <h1>
-                RAGE ROOM
-            </h1>
+            <h1>RAGE ROOM</h1>
         </div>
     </div>
-</div>
 
+</div>
+<a href="{% url 'register' user_type='general' %}" class="btn btn-primary">Register as User</a>
+<a href="{% url 'register' user_type='staff' %}" class="btn btn-secondary">Register as Staff</a>
 {% endblock %}
