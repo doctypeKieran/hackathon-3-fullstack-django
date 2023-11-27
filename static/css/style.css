@@ -1,5 +1,6 @@
 /* Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+@import 'event_style.css';
 
 /* Other app css files */
 /* @import url('../../about/static/css/style.css'); */
@@ -17,8 +18,9 @@ body {
 /* Home Page */
 .main-title {
     color: #FAFAFA;
-    font-size: 8rem;
-    padding: 4rem 0;
+    font-size: clamp(4rem, 10vw, 8rem);
+    margin: 0;
+    text-align: left;
 }
 
 .hero-section {
@@ -27,6 +29,14 @@ body {
 
 .hero-section__create {
     background-image: url('../images/red-monkey.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 50%;
+    aspect-ratio: 1;
+}
+
+.hero-section__view {
+    background-image: url('../images/pink-monkey.png');
     background-repeat: no-repeat;
     background-position: center center;
     width: 50%;
