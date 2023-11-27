@@ -1,6 +1,8 @@
 from django import forms
 from .models import Booking , RageRoomSession
 
+import datetime
+
 class EventCreationForm(forms.ModelForm):
     class Meta:
         model = RageRoomSession
