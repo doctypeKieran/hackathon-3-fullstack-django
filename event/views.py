@@ -1,7 +1,7 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from .forms import EventCreationForm
-from .models import STAFF 
+from .models import STAFF, RageRoomSession
 
 
 
@@ -38,3 +38,13 @@ def join_event(request):
     return render(request, 'join-event.html', {'form':form})
 
 # Create your views here.
+
+def view_events(request):
+    # Filter when approved field gets added to model
+    events = RageRoomSession.objects.all()
+
+    context = {
+        'events': events,
+    }
+
+    return render(request, 'event/event-list.html', context)
