@@ -33,6 +33,7 @@ body {
     background-position: center center;
     width: 50%;
     aspect-ratio: 1;
+    object-fit: cover;
 }
 
 .hero-section__view {
@@ -41,4 +42,5 @@ body {
     background-position: center center;
     width: 50%;
     aspect-ratio: 1;
+    object-fit: cover;
 }
