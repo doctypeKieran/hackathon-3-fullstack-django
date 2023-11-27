@@ -1,39 +1,16 @@
+
 from django.db import models
+from user1.models import UserProfile 
 from django.contrib.auth.models import User
 from django.core.exceptions import ValidationError
 from django.utils.translation import gettext_lazy as _
 from django.db.models.signals import post_save
 from django.dispatch import receiver
-# Fix import if broken
+
 ADMIN = 'ADMIN'
 STAFF = 'STAFF'
 
 GENERAL_USER = 'USER'
-USER_ROLES = [
-    (STAFF, _('Staff')),
-    (GENERAL_USER, _('General User')),
-    (ADMIN,'Admin'),
-]
-
-# Create your models here.
-# Adding Models in from ideation 
-class UserProfile(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='event_profile')
-    role = models.CharField(max_length=5, choices=USER_ROLES, default=GENERAL_USER)
-    badge_number = models.CharField(max_length=5, blank=True, null=True) 
-    # CREATE EMAIL FIELD
-    phone_number = models.CharField(max_length=15, blank=True, null=True,default='Not Provided') 
-    age = models.PositiveIntegerField(blank=True, null=True,default='5')
-    def save(self, *args, **kwargs):
-        if self.role == STAFF and not self.badge_number:
-            raise ValidationError(_('Staff members must have a badge number.'))
-        super(UserProfile, self).save(*args, **kwargs)
-
-    def __str__(self):
-        return f"{self.user.username} - {self.get_role_display()}"
-
-
-
 # Create your models here.
 # Adding Models in from ideation 
 
@@ -62,6 +39,7 @@ class Booking(models.Model):
     def save(self, *args, **kwargs):
      super(Booking, self).save(*args, **kwargs)
 
+
     def approve_booking(self, approving_user):
         if approving_user.userprofile.role == STAFF:
             if not self.approved:
@@ -71,4 +49,7 @@ class Booking(models.Model):
                 self.save()
         else:
             raise ValidationError(_('Only staff members can approve bookings.'))
+
+    def __str__(self):
+    return f"Booking for {self.session.title} by {self.participant.user.username}"
 

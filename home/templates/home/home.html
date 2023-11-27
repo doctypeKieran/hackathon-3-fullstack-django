@@ -27,4 +27,20 @@
 </div>
 <a href="{% url 'register' user_type='general' %}" class="btn btn-primary">Register as User</a>
 <a href="{% url 'register' user_type='staff' %}" class="btn btn-secondary">Register as Staff</a>
+
+
+
+{% if events %}
+    <ul>
+        {% for event in events %}
+            <li>
+                <h3>{{ event.title }}</h3>
+                <p>{{ event.description }}</p>
+                </li>
+            </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No events available.</p>
+    {% endif %}
 {% endblock %}
