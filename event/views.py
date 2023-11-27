@@ -21,7 +21,7 @@ def create_event(request):
 
     else:
         form = EventCreationForm()
-    return request(request, 'create-event.html',{'form':form})
+    return render(request, 'create-event.html',{'form':form})
 
 @login_required
 def join_event(request):
