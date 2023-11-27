@@ -7,8 +7,13 @@
 {% block content %}
 <div class="container-fluid">
     <div class="row">
-        <div class="col-10">
-            <h1>RAGE ROOM</h1>
+        <div class="col-11 mx-auto my-5">
+            <h1 class="">RAGE ROOM</h1>
+        </div>
+    </div>
+    <div class="row hero-section">
+        <div class="col-6 hero-section__create d-flex justify-content-center align-items-center">
+            <a href="{% url 'create_event' %}" class="btn btn-primary rounded-0 btn-large px-2">create event</a>
         </div>
     </div>
 
