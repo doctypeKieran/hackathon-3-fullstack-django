@@ -16,7 +16,11 @@ html,
 
 body {
     background-color: #000;
-    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+main {
+    min-height: 80vh;
 }
 
 /* ---------------------------------------------------- Navbar */
@@ -141,12 +145,9 @@ body {
 }
 
 /* ---------------------------------------------------- Footer */
-/* footer {
-    position: sticky;
-    bottom: 0;
-    left: 0;
-    right: 0;
-} */
+footer {
+    margin: 1rem 0;
+}
 
 .footer__link {
     color: #FAFAFA;
