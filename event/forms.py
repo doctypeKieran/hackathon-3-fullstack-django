@@ -16,8 +16,3 @@ class EventCreationForm(forms.ModelForm):
             'description':forms.Textarea(attrs={'rows':4}),
 
         }
-class EventJoinForm(forms.ModelForm):
-    event = forms.ModelChoiceField(queryset=RageRoomSession.objects.filter(date__gte=datetime.date.today()), empty_label="Select Event")
-    class Meta:
-        model = Booking
-        fields = ['event']

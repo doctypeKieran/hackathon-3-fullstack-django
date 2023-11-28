@@ -20,15 +20,18 @@
                 <p>Capacity: {{ event.capacity }}</p>
                 <img src="{{ event.image }}" class="fluid">
                 <p> {{ event.facilitator  }}  </p> 
+                {% if user.is_authenticated %}
+        {% if event.id in user_bookings %}
+            <button disabled>Join Pending</button>
+        {% else %}
+            <form method="post" action="{% url 'join_event' event.id %}">
+                {% csrf_token %}
+                <button type="submit">Join</button>
+            </form>
+        {% endif %}
+    {% endif %} 
                 
-                {% if request.user.user1_profile.role == 'USER' %}
-                <div class="mb-3 mt-3">
-                    <form method="post" action="{% url 'join_event' event.id %}">
-                        {% csrf_token %}
-                        <button type="submit" class="btn btn-primary">Request to Join</button>
-                    </form>
-            </div>
-                {% endif %}
+            
             </div>
             {% endfor %}
         </ul>

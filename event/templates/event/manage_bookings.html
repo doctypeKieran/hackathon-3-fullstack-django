@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
+{% for booking in pending_bookings %}
 <h2> Manage Booking Requests</h2>
 <div>
     <p> {{ booking.participant.user.username }} wants to join  {{ booking.event.title }}</p>

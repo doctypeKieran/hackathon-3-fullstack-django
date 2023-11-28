@@ -27,6 +27,8 @@
 </div>
 <a href="{% url 'register' user_type='general' %}" class="btn btn-primary">Register as User</a>
 <a href="{% url 'register' user_type='staff' %}" class="btn btn-secondary">Register as Staff</a>
-
+<div class="login-button">
+    <a href="{% url 'login' %}" class="btn btn-success">Login</a>
+</div>
 
 {% endblock %}
