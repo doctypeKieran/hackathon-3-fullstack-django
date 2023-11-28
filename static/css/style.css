@@ -92,6 +92,12 @@ a {
     box-shadow: none;
 }
 
+.active {
+    text-decoration: underline;
+    color: #FAFAFA;
+}
+
+
 /* ---------------------------------------------------- Home Page */
 
 .main-title {
