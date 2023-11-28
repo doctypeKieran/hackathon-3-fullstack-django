@@ -52,6 +52,7 @@ body {
     background-color: none;
     color: #FAFAFA;
     outline: none;
+    border: none;
 }
 
 .nav__btn:hover {
@@ -65,12 +66,13 @@ body {
     background-color: #FFDCFD;
     color: #000;
     border: none;
+    outline: none;
 }
 
 .nav__btn--logout:hover {
     background-color: #E13B2F;
     color: #FAFAFA;
-    border: none;
+    outline: none;
 }
 
 .navbar-toggler:focus,
