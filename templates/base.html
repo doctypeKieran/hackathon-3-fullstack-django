@@ -35,6 +35,9 @@
             <li class="nav-item">
               <a class="nav-link" href="{% url 'about_page' %}">About</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{%%}">Gallery</a>
+            </li>
             {% if user.is_authenticated and user.user1_profile.role == 'STAFF' %}
             <li class="nav-item">
               <a class="nav-link" href="{% url 'manage_bookings' %}"> Manage Bookings </a>
