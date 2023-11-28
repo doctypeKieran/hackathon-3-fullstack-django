@@ -16,12 +16,20 @@ html,
 
 body {
     background-color: #000;
-    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+main {
+    min-height: 80vh;
+}
+
+a {
+    text-decoration: none;
 }
 
 /* ---------------------------------------------------- Navbar */
 .bg-body-tertiary {
-    background-color: #000!important;
+    background-color: #000 !important;
 }
 
 .navbar-brand {
@@ -141,12 +149,9 @@ body {
 }
 
 /* ---------------------------------------------------- Footer */
-/* footer {
-    position: sticky;
-    bottom: 0;
-    left: 0;
-    right: 0;
-} */
+footer {
+    margin: 1rem 0;
+}
 
 .footer__link {
     color: #FAFAFA;
@@ -173,7 +178,7 @@ form input {
 form div,
 .email-input {
     width: 100%;
-} 
+}
 
 .form-control {
     border-radius: 0;
@@ -184,6 +189,54 @@ form li,
     color: #FAFAFA;
 }
 
+/* Events list */
+.event-btn__update {
+    border-radius: 0;
+    display: block;
+    width: 50%;
+    height: 3rem;
+    margin: 0 auto;
+    background-color: #000;
+    color: #fafafa;
+    border: 0;
+    margin: 1rem;
+    text-decoration: none;
+}
+
+.event-btn__update:hover {
+    color: #000;
+    background-color: #FAFAFA;
+}
+
+.event-btn__pending {
+    border-radius: 0;
+    display: block;
+    width: 50%;
+    height: 3rem;
+    margin: 0 auto;
+    background-color: #0000007c;
+    color: #fafafa;
+    border: 0;
+    margin: 1rem;
+    opacity: .5;
+}
+
+.event-btn__delete {
+    border-radius: 0;
+    display: block;
+    width: 50%;
+    height: 3rem;
+    margin: 0 auto;
+    background-color: #000;
+    color: #fafafa;
+    border: 0;
+    margin: 1rem;
+}
+
+.event-btn__delete:hover {
+    color: #E13B2F;
+    background-color: #FAFAFA;
+}
 
 @media (max-width: 992px) {
 
@@ -195,5 +248,5 @@ form li,
     .main-title {
         text-align: center;
     }
-    
+
 }

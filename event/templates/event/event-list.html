@@ -21,16 +21,26 @@
                     <p>Capacity: {{ event.capacity }}</p>
                     <p class="event-description"> {{ event.description|truncatechars:350 }} </p>
                     {% if user.is_authenticated %}
-                    {% if event.id in user_bookings %}
-                    <button disabled>Join Pending</button>
-                    {% else %}
+                    {% if event.id in user_bookings and request.user.user1_profile.role != 'STAFF' %}
+                    <button disabled class="event-btn__pending mx-auto">Join Pending</button>
+                    {% elif user.is_authenticated and request.user.user1_profile.role != 'STAFF'  %}
                     <form method="post" action="{% url 'join_event' event.id %}">
                         {% csrf_token %}
                         <button class="event-btn" type="submit">Join</button>
                     </form>
                     {% endif %}
-                    {% endif %}
 
+                    {% if request.user.user1_profile.role == 'STAFF' and event.capacity == 10 %}
+                    <a href="{% url 'update_event' event.id %}"><button
+                            class="btn event-btn__update mx-auto text-center my-auto">Update</button></a>
+                    <form method="post" action="{% url 'delete_event' event.id %}">
+                        {% csrf_token %}
+                        <input type="hidden" name="event_id" value="{{ event.id }}">
+                        <button type="submit" class="event-btn__delete mx-auto">Delete Event</button>
+                    </form>
+
+                    {% endif %}
+                    {% endif %}
 
                 </div>
                 {% endfor %}
