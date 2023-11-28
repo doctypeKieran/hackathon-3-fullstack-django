@@ -1,9 +1,30 @@
-{% extends 'base.html' %}
 
-{% block title %}About{% endblock %}
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}About
+<h1>Welcome to Our Website</h1>
+<a href="{% url 'register' user_type='general' %}" class="btn btn-primary">Register as User</a>
+<a href="{% url 'register' user_type='staff' %}" class="btn btn-secondary">Register as Staff</a>
+
+{% endblock %}
 
 {% block content %}
-
-<!-- About HTML goes here -->
-
+<div class="container-fluid hero-section">
+    <div class="row">
+        <div class="col-11 mx-auto my-5">
+            <h1 class="main-title">ABOUT PAGE</h1>
+        </div>
+    </div>
+    <div class="row hero-section">
+        <div class="col-6 hero-section__create d-flex justify-content-center align-items-center">
+            <a href="{% url 'create_event' %}" class="btn btn-primary rounded-0 btn-large px-2 create-event__btn">create event</a>
+        </div>
+        <div class="col-6 hero-section__create d-flex justify-content-center align-items-center">
+            <a href="{% url 'create_event' %}" class="btn btn-primary rounded-0 btn-large px-2 view-events__btn">create events</a>
+        </div>
+    </div>
+</div>
+<a href="{% url 'register' user_type='general' %}" class="btn btn-primary">Register as User</a>
+<a href="{% url 'register' user_type='staff' %}" class="btn btn-secondary">Register as Staff</a>
 {% endblock %}
