@@ -1,9 +1,0 @@
-{% extends 'base.html' %}
-
-<h2>Join an Event</h2>
-<form method="post">
-    {% csrf_token %}
-    {{ form|crispy }}
-    <button type="submit"> Join Event </button>
-</form> 
-{% block content %}

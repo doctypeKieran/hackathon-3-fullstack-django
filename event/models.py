@@ -6,6 +6,7 @@ from django.core.exceptions import ValidationError
 from django.utils.translation import gettext_lazy as _
 from django.db.models.signals import post_save
 from django.dispatch import receiver
+from django.db.models import F
 
 ADMIN = 'ADMIN'
 STAFF = 'STAFF'
@@ -41,15 +42,17 @@ class Booking(models.Model):
 
 
     def approve_booking(self, approving_user):
-        if approving_user.userprofile.role == STAFF:
-            if not self.approved:
+        if approving_user.user1_profile.role == STAFF:
+            if not self.approved and self.session.capacity > 0:
                 self.approved = True
-                self.session.capacity = F('capacity') - 1
+                self.session.capacity -= 1
                 self.session.save()
                 self.save()
+            elif self.session.capacity <= 0:
+                raise ValidationError('No more capacity available for this session.')
+
         else:
             raise ValidationError(_('Only staff members can approve bookings.'))
-
-    def __str__(self):
-        return f"Booking for {self.session.title} by {self.participant.user.username}"
+    
+    
 

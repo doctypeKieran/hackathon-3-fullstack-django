@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% for booking in pending_bookings %}
+<h2> Manage Booking Requests</h2>
+<div>
+    <p> {{ booking.participant.user.username }} wants to join  {{ booking.event.title }}</p>
+    <form method="post" action="{% url 'approve_booking' booking.id %}"> {% csrf_token %}
+        <button type="submit" name="action" value="approve" class="btn btn-success">Approve</button>
+        <button type="submit" name="action" value="decline" class="btn btn-danger">Decline</button>
+    </form>
+</div>
+{% endfor %}
+{% endblock %}

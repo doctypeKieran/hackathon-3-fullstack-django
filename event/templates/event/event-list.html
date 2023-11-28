@@ -16,11 +16,22 @@
             <div class="col-12 col-md-6 col-lg-4 justify-content-center align-items-center bg-light">
                 <h3>{{ event.title }}</h3>
                 <p>{{ event.description }}</p>
-                <p> {{.time }}</p>
                 <p>Date: {{ event.date }} | Start: {{ event.start_time }} | End: {{ event.end_time }}</p>
                 <p>Capacity: {{ event.capacity }}</p>
                 <img src="{{ event.image }}" class="fluid">
-                <p> {{ event.facilitator  }}  </p>  
+                <p> {{ event.facilitator  }}  </p> 
+                {% if user.is_authenticated %}
+        {% if event.id in user_bookings %}
+            <button disabled>Join Pending</button>
+        {% else %}
+            <form method="post" action="{% url 'join_event' event.id %}">
+                {% csrf_token %}
+                <button type="submit">Join</button>
+            </form>
+        {% endif %}
+    {% endif %} 
+                
+            
             </div>
             {% endfor %}
         </ul>

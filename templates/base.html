@@ -28,20 +28,29 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav mx-auto gap-3">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
+              <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">About</a>
             </li>
+            {% if user.is_authenticated and user.user1_profile.role == 'STAFF' %}
             <li class="nav-item">
-              <a class="nav-link" href="#">Event Diary</a>
+              <a class="nav-link" href="{% url 'manage_bookings' %}"> Manage Bookings </a>
             </li>
+            {% endif %}
+            {% if user.is_authenticated and user.user1_profile.role == 'USER' %}
             <li class="nav-item">
-              <a class="nav-link" href="#">Event List</a>
+              <a class="nav-link" href="{% url 'user_bookings' %}">Event Diary</a>
             </li>
+            {% endif %}
             <li class="nav-item">
-              <a class="nav-link" href="#">Add Event</a>
+              <a class="nav-link" href="{% url 'events-list' %}">Event List</a>
             </li>
+            {% if user.is_authenticated and user.user1_profile.role == 'STAFF' %}
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'create_event' %}">Add Event</a>
+            </li>
+            {% endif %}
           </ul>
           <a href="">Sign-in/Sign-up</a>
         </div>
