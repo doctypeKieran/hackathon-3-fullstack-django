@@ -32,10 +32,6 @@ body {
     text-align: left;
 }
 
-.hero-section {
-    height: 80%;
-}
-
 .hero-section__create {
     background-image: url('../images/red-monkey-1300.png');
     background-repeat: no-repeat;
@@ -64,5 +60,4 @@ body {
     background-color: #000;
     color: #FAFAFA;
     border: none;
-
 }
