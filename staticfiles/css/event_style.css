@@ -1,3 +1,55 @@
-.events-heading {
-    color: green;
+.event-list-section {
+    margin-top: 4rem;
+    padding: 2rem;
+}
+
+.event-box {
+    padding: 2rem;
+}
+
+.event-title {
+    margin-bottom: 1rem;
+}
+
+.event-description {
+    line-height: 1.5;
+}
+
+.event-btn {
+    display: block;
+    margin: 0 auto;
+    width: 50%;
+    height: 3rem;
+    background-color: #000;
+    color: #fafafa;
+    border: 0;
+    margin-top: 1rem;
+    transition: all 0.2s ease-in-out;
+}
+
+.event-btn:hover {
+    background-color: #222222;
+}
+
+.bg-yellow {
+    background-color: #FFCF1A
+}
+
+.bg-red {
+    background-color:  #E13B2F;
+    color: #fafafa;
+}
+
+.bg-pink {
+    background-color: #FFDCFD;
+}
+
+.bg-blue {
+    background-color: #3FA9FF;
+    color: #fafafa;
+}
+
+.bg-orange {
+    background-color: #FE6938;
+    color: #fafafa;
 }
