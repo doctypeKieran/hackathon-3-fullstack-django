@@ -1,9 +1,10 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
-from .forms import EventCreationForm 
+from .forms import EventCreationForm ,UpdateEventForm 
 from .models import STAFF, RageRoomSession ,Booking
 from django.http import JsonResponse
 from django.contrib import messages
+from django.views.decorators.http import require_POST
 
 
 
@@ -78,3 +79,30 @@ def user_bookings(request):
         'pending_bookings': pending_bookings,
     }
     return render(request, 'event/user_bookings.html', context)
+
+def update_event(request, event_id):
+    event = get_object_or_404(RageRoomSession, id=event_id)
+
+    if not request.user.user1_profile.role == 'STAFF':
+        return redirect('some_error_page')
+
+    if request.method == 'POST':
+        form = UpdateEventForm(request.POST, request.FILES, instance=event)
+        if form.is_valid():
+            form.save()
+            return redirect('event-list')
+    else:
+        form = UpdateEventForm(instance=event)
+
+    return render(request, 'event/update_event.html', {'form': form})
+
+
+@require_POST
+def delete_event(request, event_id):
+    event = get_object_or_404(RageRoomSession, id=event_id)
+
+    if request.user.user1_profile.role != 'STAFF':
+        return redirect('some_error_page')
+
+    event.delete()
+    return redirect('event-list')
