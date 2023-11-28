@@ -1,110 +1,60 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Rage Room - Booking System   
+#### Hackathon 3 - Full Stack Project   
 
-Welcome Kieran Hillman,
+#### Summary  
+The Rage Room website aims to bring an intuitive experience to their customers. The customers will have the option to view the upcoming events and register to the site in order to book themselves in and keep track of their upcoming events. The staff members will be able to access the event creation and editing features to ensure that the events stay up-to-date.  
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+#### User Persona  
+- 25 to 45 years old
+- Professional
+- In need of a place to vent their frustrations  
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+#### Specification   
+In order to deliver this project we will need to create a booking system with full CRUD functionality.  
+This will be achieved by creating 3 models; UserProfile, RageRoomSession, BookingModel.  
+These event and booking models will allow us to create a event creation and edit form. We will also have the ability to create a booking form for the average user / customer.  
+The event creation and edit form will only be available to staff / admin while the event booking features will be available to all of our registered users.  
+We will be using an agile workflow in order to achieve our vision - utlising a kanban board with our user stories to keep track of progress. Each day will start with a stand-up and end with a stand-down so that all team members are up-to-date and any blockers are addressed.
 
-## Gitpod Reminders
+#### Ideation
+We are working on setting up a user model for our website. This model needs to handle different kinds of users: from the big bosses to the regular folks just browsing. Django's got a user model already, but it might not be enough, so we are thinking of adding some tweaks to make sure everyone gets the right permissions.  
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+Then there's the Event Model. This is where all the action happens. It's going to need spaces for the basic stuff like what the event is called, what it's about, when and where it's happening, and who's running the show. All that's going to connect back to whoever's signed up on the site.  
 
-`python3 -m http.server`
+Next up is the Booking Model. This one keeps track of who's signed up for what event. It needs to hook up to both the Event and User models. We will need to keep an eye on when someone books something and whether it's confirmed or not.  
+We have also got to make sure the website knows who's who when users log in. This means setting up a system that makes sure everyone's who they say they are and can do only what they're supposed to do on the site.  
 
-A blue button should appear to click: _Make Public_,
+For signing up, making events, and booking them, we need to create some forms. Good thing Django has a tool for that which we plan to use. It should make this part easier.  
+Then there's creating views. This is about making sure there's a place for everything on the site: adding events, changing them, or even getting rid of them if needed. And we can't forget about making sure users can sign up, log in, and manage their profiles easily.  
 
-Another blue button should appear to click: _Open Browser_.
+While working on the functionality of the website, we also took this time to develop our wireframes. The site's design will be simple in order to allow us to concentrate on the functionality. The colour scheme is inspired by nature. Many animals, when threatened, display strong and contrasting colours to warn all those around. To show they are frustrated and scared. A rage room is for those who need to vent frustration - to let out their inner animal.  
+  
+    
+## Day 1 
+#### Targets
+- Set up project models
+- Connect project urls
+- Finish wireframes
+- Set up project kanban board
+- Begin working on page templates
+- Deploy
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+#### Issues
+User model issues: Connecting our user models across the different file paths proved to be difficult. 
+  
+Design issues: In order to achieve the different background colours for our event's list, we will be implementing Django's cycle tag in the for loop. This is something that we have not tried before so will be interesting to see the outcome.  
+Another design issues is the behaviour of our navigation on small screens - the content has been centered in a strange way. This will be solved by adjusting the alignment.
 
-A blue button should appear to click: _Make Public_,
+General set up: As with all Django projects, the initial set up takes a while. This process was exacerbated by the mutliple team members. However, thanks to great leadership, communication, and determination the issues were solved efficiently. These issues mainly revolved around installing the correct packages, adding said packages to the requirements.txt file, ensuring every member had a env.py file set up with the correct links etc.   
 
-Another blue button should appear to click: _Open Browser_.
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+## Day 2
+#### Targets
+- Build up the majority of the website
+- Add style to website
+- Begin Testing 
+- Bug hunting
 
-To log into the Heroku toolbelt CLI:
+#### Issues
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
-
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
-
-------
-
-## Release History
-
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
-
-**September 20 2023:** Update Python version to 3.9.17.
-
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
-
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
-
-**July 2 2021:** Remove extensions that are not available in Open VSX.
-
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
-
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
-
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
-
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
-
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
-
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
-
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
-
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
-
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
-
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
-
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
-
-------
-
-## FAQ about the uptime script
-
-**Why have you added this script?**
-
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
-
-**How will this affect me?**
-
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
-
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
-
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
-
-**So….?**
-
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
-
-**Can I opt out?**
-
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
-
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
-
-**Anything more?**
-
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
-
----
-
-Happy coding!
+#### Tests
