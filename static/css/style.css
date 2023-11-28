@@ -3,11 +3,12 @@
 /* CSS Stylesheets */
 @import 'event_style.css';
 @import 'about_style.css';
+@import 'gallery_style.css';
 
 /* Other app css files */
 /* @import url('../../about/static/css/style.css'); */
 
-/* Univeral font */
+/* ---------------------------------------------------- Univeral font */
 html,
 * {
     font-family: 'Poppins', sans-serif;
@@ -15,22 +16,87 @@ html,
 
 body {
     background-color: #000;
+    min-height: 100vh;
 }
 
-/* Home Page */
+/* ---------------------------------------------------- Navbar */
+.bg-body-tertiary {
+    background-color: #000!important;
+}
+
+.navbar-brand {
+    font-size: clamp(2rem, 2vw, 3rem);
+}
+
+.nav-link,
+.navbar-brand {
+    color: #FAFAFA;
+}
+
+.navbar-nav .nav-link.active {
+    color: #FAFAFA;
+    text-decoration: underline;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #FAFAFA;
+    text-decoration: underline;
+}
+
+.navbar .navbar-brand:hover {
+    color: #FAFAFA;
+    text-decoration: underline;
+}
+
+.nav__btn,
+.nav__btn--login,
+.nav__btn--logout {
+    background-color: none;
+    color: #FAFAFA;
+    outline: none;
+    border: none;
+}
+
+.nav__btn:hover {
+    background-color: #3FA9FF;
+    color: #FAFAFA;
+    border: none;
+    outline: none;
+}
+
+.nav__btn--login:hover {
+    background-color: #FFDCFD;
+    color: #000;
+    border: none;
+    outline: none;
+}
+
+.nav__btn--logout:hover {
+    background-color: #E13B2F;
+    color: #FAFAFA;
+    outline: none;
+}
+
+.navbar-toggler:focus,
+.navbar-toggler:active,
+.navbar-toggler-icon:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+/* ---------------------------------------------------- Home Page */
+
 .main-title {
     color: #FAFAFA;
     font-size: clamp(4rem, 10vw, 8rem);
     margin: 0;
+    padding: 0;
     text-align: left;
-}
-
-.hero-section {
-    height: 100%;
+    line-height: 3.25rem;
 }
 
 .hero-section__create {
-    background-image: url('../images/red-monkey.png');
+    background-image: url('../images/red-monkey-1300.png');
     background-repeat: no-repeat;
     background-position: center center;
     width: 50%;
@@ -39,10 +105,95 @@ body {
 }
 
 .hero-section__view {
-    background-image: url('../images/pink-monkey.png');
+    background-image: url('../images/pink-monkey-1300.png');
     background-repeat: no-repeat;
     background-position: center center;
     width: 50%;
     aspect-ratio: 1;
     object-fit: cover;
+}
+
+.create-event__btn {
+    background-color: #FAFAFA;
+    color: #000;
+    border: none;
+    padding: 0.5em 2em;
+    font-size: clamp(1.25rem, 2vw, 3rem);
+}
+
+.create-event__btn:hover {
+    background-color: #3FA9FF;
+    color: #FAFAFA;
+    border: none;
+}
+
+.view-events__btn {
+    background-color: #000;
+    color: #FAFAFA;
+    border: none;
+    padding: 0.5em 2em;
+    font-size: clamp(1.25rem, 2vw, 3rem);
+}
+
+.view-events__btn:hover {
+    background-color: #3FA9FF;
+    border: none;
+}
+
+/* ---------------------------------------------------- Footer */
+/* footer {
+    position: sticky;
+    bottom: 0;
+    left: 0;
+    right: 0;
+} */
+
+.footer__link {
+    color: #FAFAFA;
+    text-decoration: none;
+}
+
+.footer__link:hover {
+    text-decoration: underline;
+}
+
+/* ---------------------------------------------------- Forms */
+.form__style {
+    color: #FAFAFA;
+    height: 90vh;
+    width: 100%;
+}
+
+form input {
+    margin: 0.5rem 0;
+    height: 3rem;
+    width: 100%;
+}
+
+form div,
+.email-input {
+    width: 100%;
+} 
+
+.form-control {
+    border-radius: 0;
+}
+
+form li,
+.form-text {
+    color: #FAFAFA;
+}
+
+
+@media (max-width: 992px) {
+
+    .hero-section__create,
+    .hero-section__view {
+        width: 100%;
+    }
+
+    .main-title {
+        text-align: center;
+    }
+    
 }

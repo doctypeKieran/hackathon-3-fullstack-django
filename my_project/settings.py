@@ -30,7 +30,7 @@ SECRET_KEY = 'django-insecure-ozs91ikid)&d1zrjwla69pe*vw1ta1_qvm3f$6a4*crd3tf(qf
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-doctypekier-hackathon3f-ljfrt6pu6vs.ws-eu106.gitpod.io','8000-doctypekier-hackathon3f-78fgpzh2gwv.ws-eu106.gitpod.io', '8000-doctypekier-hackathon3f-6a4q2poffoi.ws-eu106.gitpod.io', '8000-doctypekier-hackathon3f-paheb9jie8e.ws-eu106.gitpod.io']
+ALLOWED_HOSTS = ['8000-doctypekier-hackathon3f-ljfrt6pu6vs.ws-eu106.gitpod.io','8000-doctypekier-hackathon3f-78fgpzh2gwv.ws-eu106.gitpod.io', '8000-doctypekier-hackathon3f-6a4q2poffoi.ws-eu106.gitpod.io', '8000-doctypekier-hackathon3f-paheb9jie8e.ws-eu106.gitpod.io', 'hackathon-3-django-project-59dd84c02c42.herokuapp.com']
 
 
 # Application definition
@@ -42,8 +42,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'cloudinary_storage',
     'crispy_forms',
     'crispy_bootstrap5',
+    'cloudinary',
     'about',
     'event',
     'home',
@@ -54,8 +56,10 @@ CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
 
 CRISPY_TEMPLATE_PACK = "bootstrap5"
 
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',

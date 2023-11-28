@@ -18,20 +18,25 @@
 
 <body>
   <header>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary px-5 py-3">
-      <div class="container-fluid d-flex justify-content-around mx-auto">
+    <nav class="navbar sticky-top navbar-expand-lg bg-body-tertiary px-5 py-3">
+      <div class="container-fluid p-0">
         <a class="navbar-brand" href="{% url 'home' %}">RR</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler navbar-dark border-0" type="button" data-bs-toggle="collapse"
+          data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav mx-auto gap-3">
+        <div class="collapse navbar-collapse align-items-center justify-content-md-center justify-content-lg-center mb-lg-0"
+          id="navbarNav">
+          <ul
+            class="navbar-nav mx-auto gap-3 flex-lg-row flex-column align-items-center justify-content-center text-center my-auto">
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">About</a>
+              <a class="nav-link" href="{% url 'about_page' %}">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Gallery</a>
             </li>
             {% if user.is_authenticated and user.user1_profile.role == 'STAFF' %}
             <li class="nav-item">
@@ -52,7 +57,22 @@
             </li>
             {% endif %}
           </ul>
-          <a href="">Sign-in/Sign-up</a>
+          {% if user.is_authenticated %}
+          <form action="{% url 'logout' %}" method="post">
+            {% csrf_token %}
+            <button type="submit" class="btn rounded-0 nav__btn--logout">Logout</button>
+          </form>
+          {% else %}
+          <div
+            class="navbar__auth d-flex gap-3 flex-lg-row flex-column align-items-center justify-content-center mt-lg-0 mt-3">
+            <a href="{% url 'register' user_type='general' %}" class="btn rounded-0 nav__btn">Register as User</a>
+            <a href="{% url 'register' user_type='staff' %}" class="btn rounded-0 nav__btn">Register as Staff</a>
+            <div class="login-button">
+              <a href="{% url 'login' %}" class="btn rounded-0 nav__btn--login px-5">Login</a>
+            </div>
+
+            {% endif %}
+          </div>
         </div>
       </div>
     </nav>
@@ -64,7 +84,17 @@
   </main>
 
   <footer>
-    <!-- Footer content here -->
+    <div class="container-fluid">
+      <div class="row justify-content-center align-items-center">
+        <div
+          class="col-6 py-5 gap-3 d-flex flex-lg-row flex-md-column flex-sm-column flex-column justify-content-between align-items-center footer__wrapper">
+          <a href="mailto: rageroom@example.com" target="_blank" class="footer__link">Contact</a>
+          <a href="https://www.google.com/maps" target="_blank" class="footer__link">Location</a>
+          <a href="https://www.instagram.com" target="_blank" class="footer__link">Instagram</a>
+          <a href="" target="_blank" class="footer__link">T&amp;Cs</a>
+        </div>
+      </div>
+    </div>
   </footer>
 
   <!-- Bootstrap JS -->
