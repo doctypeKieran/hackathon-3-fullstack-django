@@ -2,14 +2,14 @@
 
 {% block content %}
 <div class="container">
-    <div class="row">
+    <div class="row flex-column justify-content-start align-items-center form__style">
         <div class="col-6">
-            <h2> Login </h2>
-            <form method="post" class="">
+            <h2 class="text-center my-5"> Login </h2>
+            <form method="post" class="d-flex flex-column justify-content-center align-items-center">
                 {% csrf_token %}
                 {{ form.username.label_tag }} {{ form.username }}
                 {{ form.password.label_tag }} {{ form.password }}
-                <button type="submit" class="btn rounded-0 nav__btn--login px-5"> Login </button>
+                <button type="submit" class="btn rounded-0 nav__btn--login px-5 mt-3"> Login </button>
             </form>
         </div>
     </div>

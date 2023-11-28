@@ -149,6 +149,28 @@ body {
     text-decoration: underline;
 }
 
+/* Forms */
+.form__style {
+    color: #FAFAFA;
+    height: 80vh;
+    width: 100%;
+}
+
+form input {
+    margin: 0.5rem 0;
+    height: 3rem;
+    width: 100%;
+}
+
+.form-control {
+    border-radius: 0;
+}
+
+form li,
+.form-text {
+    color: #FAFAFA;
+}
+
 
 @media (max-width: 992px) {
 
