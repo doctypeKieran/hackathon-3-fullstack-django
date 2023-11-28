@@ -18,10 +18,17 @@ body {
 }
 
 /* Home Page */
+.main-title__wrapper {
+    padding-left: 3rem;
+    margin-top: 5%;
+    margin-bottom: 3%;
+}
+
 .main-title {
     color: #FAFAFA;
     font-size: clamp(4rem, 10vw, 8rem);
     margin: 0;
+    padding: 0;
     text-align: left;
 }
 
@@ -45,4 +52,17 @@ body {
     width: 50%;
     aspect-ratio: 1;
     object-fit: cover;
+}
+
+.create-event__btn {
+    background-color: #FAFAFA;
+    color: #000;
+    border: none;
+}
+
+.create-event__btn:hover {
+    background-color: #000;
+    color: #FAFAFA;
+    border: none;
+
 }
