@@ -5,18 +5,18 @@
 {% block title %}Home{% endblock %}
 
 {% block content %}
-<div class="container-fluid hero-section">
+<div class="container-fluid p-0 hero-section h-100">
     <div class="row">
-        <div class="col-12 mx-auto main-title__wrapper">
+        <div class="col-12 mx-auto main-title__wrapper px-5 py-5 mb-5">
             <h1 class="main-title">RAGE ROOM</h1>
         </div>
     </div>
-    <div class="row">
-        <div class="col-6 hero-section__create d-flex justify-content-center align-items-center">
-            <a href="{% url 'create_event' %}" class="btn btn-primary rounded-0 btn-large px-5 py-3 create-event__btn">create event</a>
+    <div class="row flex-lg-row flex-sm-column justify-content-center align-items-center">
+        <div class="col-lg-6 col-sm-10 hero-section__create d-flex justify-content-center align-items-center">
+            <a href="{% url 'create_event' %}" class="btn btn-primary rounded-0 btn-large create-event__btn">create event</a>
         </div>
-        <div class="col-6 hero-section__view d-flex justify-content-center align-items-center">
-            <a href="{% url 'events-list' %}" class="btn btn-primary rounded-0 btn-large px-5 py-3 view-events__btn">view events</a>
+        <div class="col-lg-6 col-sm-10 hero-section__view d-flex justify-content-center align-items-center">
+            <a href="{% url 'events-list' %}" class="btn btn-primary rounded-0 btn-large view-events__btn">view events</a>
         </div>
     </div>
 </div>

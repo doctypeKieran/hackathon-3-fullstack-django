@@ -17,12 +17,70 @@ body {
     background-color: #000;
 }
 
-/* Home Page */
-.main-title__wrapper {
-    padding-left: 3rem;
-    margin-top: 5%;
-    margin-bottom: 3%;
+/* Navbar */
+.bg-body-tertiary {
+    background-color: #000!important;
 }
+
+.navbar-brand {
+    font-size: clamp(2rem, 2vw, 3rem);
+}
+
+.nav-link,
+.navbar-brand {
+    color: #FAFAFA;
+}
+
+.navbar-nav .nav-link.active {
+    color: #FAFAFA;
+    text-decoration: underline;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #FAFAFA;
+    text-decoration: underline;
+}
+
+.navbar .navbar-brand:hover {
+    color: #FAFAFA;
+    text-decoration: underline;
+}
+
+.nav__btn,
+.nav__btn--login,
+.nav_btn--logout {
+    background-color: none;
+    color: #FAFAFA;
+    outline: none;
+}
+
+.nav__btn:hover {
+    background-color: #3FA9FF;
+    color: #FAFAFA;
+    border: none;
+    outline: none;
+}
+
+.nav__btn--login:hover {
+    background-color: #FFDCFD;
+    color: #000;
+    border: none;
+}
+
+.nav__btn--logout:hover {
+    background-color: #E13B2F;
+    color: #FAFAFA;
+    border: none;
+}
+
+.navbar-toggler:focus,
+.navbar-toggler:active,
+.navbar-toggler-icon:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+/* Home Page */
 
 .main-title {
     color: #FAFAFA;
@@ -30,10 +88,7 @@ body {
     margin: 0;
     padding: 0;
     text-align: left;
-}
-
-.hero-section {
-    height: 80%;
+    line-height: 3.25rem;
 }
 
 .hero-section__create {
@@ -58,11 +113,49 @@ body {
     background-color: #FAFAFA;
     color: #000;
     border: none;
+    padding: 0.5em 2em;
+    font-size: clamp(1.25rem, 2vw, 3rem);
 }
 
 .create-event__btn:hover {
+    background-color: #3FA9FF;
+    color: #FAFAFA;
+    border: none;
+}
+
+.view-events__btn {
     background-color: #000;
     color: #FAFAFA;
     border: none;
+    padding: 0.5em 2em;
+    font-size: clamp(1.25rem, 2vw, 3rem);
+}
 
+.view-events__btn:hover {
+    background-color: #3FA9FF;
+    border: none;
+}
+
+/* Footer */
+.footer__link {
+    color: #FAFAFA;
+    text-decoration: none;
+}
+
+.footer__link:hover {
+    text-decoration: underline;
+}
+
+
+@media (max-width: 992px) {
+
+    .hero-section__create,
+    .hero-section__view {
+        width: 100%;
+    }
+
+    .main-title {
+        text-align: center;
+    }
+    
 }
