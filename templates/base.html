@@ -1,5 +1,12 @@
 {% load static %}
 
+{% url 'home' as home_url %}
+{% url 'about_page' as about_url %}
+{% url 'manage_bookings' as manage_bookings_url %}
+{% url 'user_bookings' as user_bookings_url %}
+{% url 'events-list' as events_list_url %}
+{% url 'create_event' as create_event_url %}
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -30,30 +37,30 @@
           <ul
             class="navbar-nav mx-auto gap-3 flex-lg-row flex-column align-items-center justify-content-center text-center my-auto">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
+              <a class="nav-link {% if request.path == home_url %}active" aria-current="page{% endif %}" href="{% url 'home' %}">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{% url 'about_page' %}">About</a>
+              <a class="nav-link {% if request.path == about_url %}active" aria-current="page{% endif %}" href="{% url 'about_page' %}">About</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">Gallery</a>
             </li>
             {% if user.is_authenticated and user.user1_profile.role == 'STAFF' %}
             <li class="nav-item">
-              <a class="nav-link" href="{% url 'manage_bookings' %}"> Manage Bookings </a>
+              <a class="nav-link {% if request.path == manage_bookings_url %}active" aria-current="page{% endif %}" href="{% url 'manage_bookings' %}"> Manage Bookings </a>
             </li>
             {% endif %}
             {% if user.is_authenticated and user.user1_profile.role == 'USER' %}
             <li class="nav-item">
-              <a class="nav-link" href="{% url 'user_bookings' %}">Event Diary</a>
+              <a class="nav-link {% if request.path == user_bookings_url %}active" aria-current="page{% endif %}" href="{% url 'user_bookings' %}">Event Diary</a>
             </li>
             {% endif %}
             <li class="nav-item">
-              <a class="nav-link" href="{% url 'events-list' %}">Event List</a>
+              <a class="nav-link {% if request.path == events_list_url %}active" aria-current="page{% endif %}" href="{% url 'events-list' %}">Event List</a>
             </li>
             {% if user.is_authenticated and user.user1_profile.role == 'STAFF' %}
             <li class="nav-item">
-              <a class="nav-link" href="{% url 'create_event' %}">Add Event</a>
+              <a class="nav-link {% if request.path == create_event_url %}active" aria-current="page{% endif %}" href="{% url 'create_event' %}">Add Event</a>
             </li>
             {% endif %}
           </ul>
