@@ -3,10 +3,16 @@
 {% load crispy_forms_tags %}
 
 {% block content %}
-    <h2>Register</h2>
-    <form method="post">
-        {% csrf_token %}
-        {{ form|crispy }}
-        <button type="submit">Register</button>
-    </form>
+<div class="container">
+    <div class="row flex-column justify-content-start align-items-center form__style">
+        <div class="col-lg-6 col-md-8 col-10">
+            <h2 class="text-center my-5">Register</h2>
+            <form method="post" class="d-flex flex-column justify-content-center align-items-center">
+                {% csrf_token %}
+                {{ form|crispy }}
+                <button type="submit" class="btn rounded-0 nav__btn px-5 mt-3">Register</button>
+            </form>
+        </div>
+    </div>
+</div>
 {% endblock %}

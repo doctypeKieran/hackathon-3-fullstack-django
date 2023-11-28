@@ -8,7 +8,7 @@
 /* Other app css files */
 /* @import url('../../about/static/css/style.css'); */
 
-/* Univeral font */
+/* ---------------------------------------------------- Univeral font */
 html,
 * {
     font-family: 'Poppins', sans-serif;
@@ -16,9 +16,10 @@ html,
 
 body {
     background-color: #000;
+    min-height: 100vh;
 }
 
-/* Navbar */
+/* ---------------------------------------------------- Navbar */
 .bg-body-tertiary {
     background-color: #000!important;
 }
@@ -83,7 +84,7 @@ body {
     box-shadow: none;
 }
 
-/* Home Page */
+/* ---------------------------------------------------- Home Page */
 
 .main-title {
     color: #FAFAFA;
@@ -139,7 +140,14 @@ body {
     border: none;
 }
 
-/* Footer */
+/* ---------------------------------------------------- Footer */
+/* footer {
+    position: sticky;
+    bottom: 0;
+    left: 0;
+    right: 0;
+} */
+
 .footer__link {
     color: #FAFAFA;
     text-decoration: none;
@@ -147,6 +155,33 @@ body {
 
 .footer__link:hover {
     text-decoration: underline;
+}
+
+/* ---------------------------------------------------- Forms */
+.form__style {
+    color: #FAFAFA;
+    height: 90vh;
+    width: 100%;
+}
+
+form input {
+    margin: 0.5rem 0;
+    height: 3rem;
+    width: 100%;
+}
+
+form div,
+.email-input {
+    width: 100%;
+} 
+
+.form-control {
+    border-radius: 0;
+}
+
+form li,
+.form-text {
+    color: #FAFAFA;
 }
 
 
