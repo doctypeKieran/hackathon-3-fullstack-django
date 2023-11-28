@@ -1,19 +1,16 @@
 /* Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+/* CSS Stylesheets */
+@import 'event_style.css';
+@import 'about_style.css';
 
 /* Other app css files */
-<<<<<<< HEAD
 /* @import url('../../about/static/css/style.css'); */
-=======
-@import url('../../about/static/css/style.css');
->>>>>>> fd94142 ( Adding Events)
 
 /* Univeral font */
 html,
 * {
     font-family: 'Poppins', sans-serif;
-<<<<<<< HEAD
-=======
 }
 
 body {
@@ -23,8 +20,9 @@ body {
 /* Home Page */
 .main-title {
     color: #FAFAFA;
-    font-size: 8rem;
-    padding: 4rem 0;
+    font-size: clamp(4rem, 10vw, 8rem);
+    margin: 0;
+    text-align: left;
 }
 
 .hero-section {
@@ -37,5 +35,14 @@ body {
     background-position: center center;
     width: 50%;
     aspect-ratio: 1;
->>>>>>> fd94142 ( Adding Events)
+    object-fit: cover;
+}
+
+.hero-section__view {
+    background-image: url('../images/pink-monkey.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 50%;
+    aspect-ratio: 1;
+    object-fit: cover;
 }
