@@ -18,8 +18,8 @@
 
 <body>
   <header>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary px-5 py-3">
-      <div class="container-fluid d-flex justify-content-around mx-auto">
+    <nav class="navbar fixed-top navbar-expand-lg bg-body-tertiary px-5 py-3">
+      <div class="container-fluid">
         <a class="navbar-brand" href="{% url 'home' %}">RR</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
           aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -31,7 +31,7 @@
               <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">About</a>
+              <a class="nav-link" href="{% url 'about_page' %}">About</a>
             </li>
             {% if user.is_authenticated and user.user1_profile.role == 'STAFF' %}
             <li class="nav-item">
@@ -52,7 +52,19 @@
             </li>
             {% endif %}
           </ul>
-          <a href="">Sign-in/Sign-up</a>
+          <div class="navbar__auth d-flex gap-2">
+            <a href="{% url 'register' user_type='general' %}" class="btn btn-primary">Register as User</a>
+            <a href="{% url 'register' user_type='staff' %}" class="btn btn-secondary">Register as Staff</a>
+            <div class="login-button">
+              <a href="{% url 'login' %}" class="btn btn-success">Login</a>
+            </div>
+            {% if user.is_authenticated %}
+            <form action="{% url 'logout' %}" method="post">
+              {% csrf_token %}
+              <button type="submit">Logout</button>
+            </form>
+            {% endif %}
+          </div>
         </div>
       </div>
     </nav>
