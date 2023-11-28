@@ -29,6 +29,12 @@
                 <button type="submit">Join</button>
             </form>
         {% endif %}
+
+        {% if request.user.user1_profile.role == 'STAFF' and event.capacity == 10 %}
+        <a href="{% url 'delete_event' event.id %}" class="btn btn-primary"> Delete </a>
+        <a href="{% url 'update_event' event.id %}" class="btn btn-primary"> Update </a>
+        
+    {% endif %} 
     {% endif %} 
                 
             
