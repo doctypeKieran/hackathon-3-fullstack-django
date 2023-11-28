@@ -44,7 +44,7 @@ def join_event(request,event_id):
     if request.method == 'POST':
         event = get_object_or_404(RageRoomSession, id=event_id)
         Booking.objects.create(session=event, participant=request.user.user1_profile)
-    return redirect('view_events')
+    return redirect('event-list')
 def manage_bookings(request):
     if request.user.user1_profile.role == STAFF:
         pending_bookings = Booking.objects.filter(approved=False)
@@ -68,3 +68,13 @@ def approve_booking(request,booking_id):
             booking.delete()
 
     return redirect('manage_bookings')
+
+def user_bookings(request):
+    user_profile=request.user.user1_profile
+    approve_bookings=Booking.objects.filter(participant=user_profile,approved=True)
+    pending_bookings=Booking.objects.filter(participant=user_profile,approved=False)
+    context = {
+        'approved_bookings': approve_bookings,
+        'pending_bookings': pending_bookings,
+    }
+    return render(request, 'event/user_bookings.html', context)
