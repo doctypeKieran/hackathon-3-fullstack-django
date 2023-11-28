@@ -33,13 +33,4 @@ class UpdateEventForm(forms.ModelForm):
         if capacity != 10:
             raise forms.ValidationError('Capacity must remain at 10 to update the event. ')
 
-class EventDeleteForm(forms.Form):
-    event_id = forms.IntegerField(widget=forms.HiddenInput())
 
-    def clean_event_id(self):
-        event_id = self.cleaned_data.get('event_id')
-        try:
-            RageRoomSession.objects.get(id=event_id)
-        except RageRoomSession.DoesNotExist:
-            raise forms.ValidationError('The specified event does not exist')
-        return event_id

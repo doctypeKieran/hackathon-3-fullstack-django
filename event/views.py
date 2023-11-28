@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
-from .forms import EventCreationForm ,UpdateEventForm,EventDeleteForm
+from .forms import EventCreationForm ,UpdateEventForm 
 from .models import STAFF, RageRoomSession ,Booking
 from django.http import JsonResponse
 from django.contrib import messages
@@ -98,11 +98,11 @@ def update_event(request, event_id):
 
 
 @require_POST
-def delete_event(request):
-    event_id = request.POST.get('event_id')
+def delete_event(request, event_id):
     event = get_object_or_404(RageRoomSession, id=event_id)
 
-    if request.user.user1_profile.role == 'STAFF':
+    if request.user.user1_profile.role != 'STAFF':
         return redirect('some_error_page')
+
     event.delete()
-    return redirect('event/events_list')
+    return redirect('event-list')

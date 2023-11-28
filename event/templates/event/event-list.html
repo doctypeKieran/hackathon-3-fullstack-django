@@ -31,7 +31,11 @@
         {% endif %}
 
         {% if request.user.user1_profile.role == 'STAFF' and event.capacity == 10 %}
-        <a href="{% url 'delete_event' event.id %}" class="btn btn-primary"> Delete </a>
+        <form method="post" action="{% url 'delete_event' event.id %}">
+            {% csrf_token %}
+            <input type="hidden" name="event_id" value="{{ event.id }}">
+            <button type="submit">Delete Event</button>
+        </form>
         <a href="{% url 'update_event' event.id %}" class="btn btn-primary"> Update </a>
         
     {% endif %} 

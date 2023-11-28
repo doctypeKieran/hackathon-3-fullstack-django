@@ -2,7 +2,7 @@
 {% load crispy_forms_tags %}
 
 {% block content %}
-<form method="post" action="{% url 'delete_event' %}">
+<form method="post" action="{% url 'delete_event' event.id %}">
     {% csrf_token %}
     <input type="hidden" name="event_id" value="{{ event.id }}">
     <button type="submit">Delete Event</button>
