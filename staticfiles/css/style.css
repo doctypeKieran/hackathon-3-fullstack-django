@@ -3,11 +3,12 @@
 /* CSS Stylesheets */
 @import 'event_style.css';
 @import 'about_style.css';
+@import 'gallery_style.css';
 
 /* Other app css files */
 /* @import url('../../about/static/css/style.css'); */
 
-/* Univeral font */
+/* ---------------------------------------------------- Univeral font */
 html,
 * {
     font-family: 'Poppins', sans-serif;
@@ -15,11 +16,26 @@ html,
 
 body {
     background-color: #000;
+    overflow-x: hidden;    
 }
 
-/* Navbar */
+main {
+    min-height: 100vh;
+    margin-bottom: 3rem;
+}
+
+/* .container,
+.row {
+    min-height: 100vh!important;
+} */
+
+a {
+    text-decoration: none;
+}
+
+/* ---------------------------------------------------- Navbar */
 .bg-body-tertiary {
-    background-color: #000!important;
+    background-color: #000 !important;
 }
 
 .navbar-brand {
@@ -48,7 +64,7 @@ body {
 
 .nav__btn,
 .nav__btn--login,
-.nav_btn--logout {
+.nav__btn--logout {
     background-color: none;
     color: #FAFAFA;
     outline: none;
@@ -82,7 +98,13 @@ body {
     box-shadow: none;
 }
 
-/* Home Page */
+.active {
+    text-decoration: underline;
+    color: #FAFAFA;
+}
+
+
+/* ---------------------------------------------------- Home Page */
 
 .main-title {
     color: #FAFAFA;
@@ -138,7 +160,10 @@ body {
     border: none;
 }
 
-/* Footer */
+/* ---------------------------------------------------- Footer */
+.footer__wrapper {
+    margin: 2rem 0;
+}
 .footer__link {
     color: #FAFAFA;
     text-decoration: none;
@@ -148,6 +173,100 @@ body {
     text-decoration: underline;
 }
 
+footer .footer__link {
+    background-color: #000;
+    border: none;
+}
+
+footer .footer__link:hover {
+    background-color: #000;
+    border: none;
+}
+
+/* ---------------------------------------------------- Forms */
+form {
+    margin-bottom: 1rem 0;
+    min-height: 100%;
+}
+
+.form__create-event {
+    min-height: 100%;
+}
+
+.form__style {
+    color: #FAFAFA;
+    min-height: 100%;
+    width: 100%;
+}
+
+form input {
+    margin: 0.5rem 0;
+    height: 3rem;
+    width: 100%;
+}
+
+form div,
+.email-input {
+    width: 100%;
+}
+
+.form-control {
+    border-radius: 0;
+}
+
+form li,
+.form-text {
+    color: #FAFAFA;
+}
+
+/* Events list */
+.event-btn__update {
+    border-radius: 0;
+    display: block;
+    width: 50%;
+    height: 3rem;
+    margin: 0 auto;
+    background-color: #000;
+    color: #fafafa;
+    border: 0;
+    margin: 1rem;
+    text-decoration: none;
+}
+
+.event-btn__update:hover {
+    color: #000;
+    background-color: #FAFAFA;
+}
+
+.event-btn__pending {
+    border-radius: 0;
+    display: block;
+    width: 50%;
+    height: 3rem;
+    margin: 0 auto;
+    background-color: #0000007c;
+    color: #fafafa;
+    border: 0;
+    margin: 1rem;
+    opacity: .5;
+}
+
+.event-btn__delete {
+    border-radius: 0;
+    display: block;
+    width: 50%;
+    height: 3rem;
+    margin: 0 auto;
+    background-color: #000;
+    color: #fafafa;
+    border: 0;
+    margin: 1rem;
+}
+
+.event-btn__delete:hover {
+    color: #E13B2F;
+    background-color: #FAFAFA;
+}
 
 @media (max-width: 992px) {
 
@@ -159,5 +278,5 @@ body {
     .main-title {
         text-align: center;
     }
-    
+
 }
