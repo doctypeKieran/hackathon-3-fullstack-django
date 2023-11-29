@@ -4,10 +4,13 @@ from event.models import RageRoomSession, Booking
 from user1.models import UserProfile
 
 # Register your models here.
+
+
 class RageRoomSessionAdmin(admin.ModelAdmin):
     list_display = ('title', 'facilitator', 'date', 'start_time', 'end_time', 'capacity')
     search_fields = ('title', 'facilitator__user__username')
     list_filter = ('date', 'facilitator')
+
 
 class BookingAdmin(admin.ModelAdmin):
     list_display = ('session', 'participant', 'booking_time', 'approved')
