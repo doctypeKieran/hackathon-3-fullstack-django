@@ -163,15 +163,16 @@ a {
 /* ---------------------------------------------------- Manage bookings */
 .booking__card {
     border-radius: 0;
-    padding: 3rem;
+    padding: 1.25rem;
 }
 
 .manage-btn__approve {
     border-radius: 0;
     display: block;
-    width: 100%;
+    width: 75%;
     height: 3rem;
     margin: 0 auto;
+    padding: 0 1rem;
     background-color: #000;
     color: #fafafa;
     border: 0;
@@ -179,6 +180,29 @@ a {
     text-decoration: none;
 }
 
+.manage-btn__delete {
+    border-radius: 0;
+    display: block;
+    width: 75%;
+    height: 3rem;
+    margin: 0 auto;
+    padding: 0 1rem;
+    background-color: #000;
+    color: #fafafa;
+    border: 0;
+    margin: 1rem;
+    text-decoration: none;
+}
+
+.manage-btn__delete:hover {
+    color: #E13B2F;
+    background-color: #FAFAFA;
+}
+
+.manage-btn__approve:hover {
+    color: #000;
+    background-color: #FAFAFA;
+}
 /* ---------------------------------------------------- Footer */
 .footer__wrapper {
     margin: 2rem 0;
