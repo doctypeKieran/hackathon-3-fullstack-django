@@ -191,18 +191,40 @@ Design issues:
 - Presentation 
 
 #### Tests
+- Responsiveness. To make sure that the site is available to all screen sizes we need to ensure that the responsiveness is working correctly. The main issues arose with the footer as it would overlap forms making interaction with the lower end of a form difficult. This was solved by tweaking the min height of the container classes which appeared above it. We also needed to adjust the font sizing and line-height to improve readability on smaller screens.  
 
+- Code validation. In order to submit our project correctly, all code has been checked and validated. Some errors have come back mainly surrounding the bootstrap classes and build - this is something to potentially tackle in future versions.  
 
-#### Hackathon Summary
+- All buttons and links. We went through the site and tested all of our buttons and links to make sure that they take the user to the desired locations. We also ensured that certain pages are only available to certain user types.  
 
+- Authentication system. In order to ensure that our users and staff can create profiles and use the site correctly, we have created multiple accounts with the intention of breaking the system.
+
+#### Hackathon Summary  
+In summarry, we believe this hackathon has been successful. What we have created in 3 days is nothing short of impressive.  
+There are of course areas where we can improve the site but this can be saved for future versions. 
 
 #### Validation Checkers
 
+[w3 HTML checker](https://validator.w3.org/nu/?doc=https%3A%2F%2Fhackathon-3-django-project-59dd84c02c42.herokuapp.com%2F)   
+We are currently seeing 1 error due to the closing div on our bootstrap navbar.  
+This closing div is necessary so we cannot remove it.
+  
+  
+[W3C CSS Checker](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fhackathon-3-django-project-59dd84c02c42.herokuapp.com%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)  
+We are currently seeing 22 errors and 433 warnings.  
+This is due to bootstraps classes.
 
-#### Testing 
+[Accessibility Checker](https://www.accessibilitychecker.org/audit/?website=https%3A%2F%2Fhackathon-3-django-project-59dd84c02c42.herokuapp.com%2F&flag=eu)  
+Partly Compliant - 85%  
+  
+Lighthouse Checker
+![Image of Lighthouse speed checker](static/images/speedcheck.png)
 
 
 #### Future additions
 - Stricter Validation
 - Updated styling for event diary
 - Update title styling
+- If event date is before current date - remove event
+- Single account can book multiple spaces
+- Add more to FAQ depending on future customer questions
