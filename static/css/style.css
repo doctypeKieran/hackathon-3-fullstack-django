@@ -39,7 +39,7 @@ a {
 }
 
 .navbar-brand {
-    font-size: clamp(2rem, 2vw, 3rem);
+    font-size: clamp(2.25rem, 2vw, 3rem);
 }
 
 .nav-link,
@@ -112,7 +112,7 @@ a {
     margin: 0;
     padding: 0;
     text-align: left;
-    line-height: 3.25rem;
+    line-height: 3.5rem;
 }
 
 .hero-section__create {
@@ -279,6 +279,7 @@ form li,
 
     .main-title {
         text-align: center;
+        line-height: 4rem;
     }
 
 }
