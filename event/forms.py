@@ -7,7 +7,7 @@ import datetime
 class EventCreationForm(forms.ModelForm):
     class Meta:
         model = RageRoomSession
-        fields=['title','description','date','start_time','end_time','capacity','image']
+        fields=['title','description','date','start_time','end_time','capacity','featured_image']
         widgets = {
             'date':forms.DateInput(attrs={'type': 'date'}
             ),
@@ -21,7 +21,7 @@ class UpdateEventForm(forms.ModelForm):
     class Meta:
         model = RageRoomSession
         exclude = ['capacity'] 
-        fields = ['title', 'description', 'date', 'start_time', 'end_time', 'capacity', 'image']
+        fields = ['title', 'description', 'date', 'start_time', 'end_time', 'capacity', 'featured_image']
         widgets = {
             'date': forms.DateInput(attrs={'type': 'date'}),
             'start_time': forms.TimeInput(attrs={'type': 'time'}),

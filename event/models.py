@@ -7,6 +7,7 @@ from django.utils.translation import gettext_lazy as _
 from django.db.models.signals import post_save
 from django.dispatch import receiver
 from django.db.models import F
+from cloudinary.models import CloudinaryField
 
 
 ADMIN = 'ADMIN'
@@ -25,6 +26,7 @@ class RageRoomSession(models.Model):
     end_time = models.TimeField()
     capacity = models.IntegerField(default=10)  
     image = models.ImageField(upload_to='rage_room_images/', blank=True, null=True)
+    featured_image = CloudinaryField('image', default='placeholder', null=True, blank=True)
     def __str__(self):
         return f"{self.title} on {self.date}"
 
