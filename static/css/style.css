@@ -16,13 +16,18 @@ html,
 
 body {
     background-color: #000;
-    overflow-x: hidden;
+    overflow-x: hidden;    
 }
-
 
 main {
     min-height: 100vh;
+    margin-bottom: 3rem;
 }
+
+/* .container,
+.row {
+    min-height: 100vh!important;
+} */
 
 a {
     text-decoration: none;
@@ -181,11 +186,16 @@ footer .footer__link:hover {
 /* ---------------------------------------------------- Forms */
 form {
     margin-bottom: 1rem 0;
+    min-height: 100%;
+}
+
+.form__create-event {
+    min-height: 100%;
 }
 
 .form__style {
     color: #FAFAFA;
-    height: 90vh;
+    min-height: 100%;
     width: 100%;
 }
 
