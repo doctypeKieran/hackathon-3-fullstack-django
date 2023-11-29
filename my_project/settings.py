@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'event',
     'home',
     'user1',
+    'gallery',
 ]
 
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
