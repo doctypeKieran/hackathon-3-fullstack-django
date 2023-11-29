@@ -14,7 +14,7 @@
         <form method="post" action="{% url 'approve_booking' booking.id %}" class="row justify-content-center align-items-center flex-column"> {% csrf_token %}
             <div class="row justify-content-center align-items-center flex-column w-100">
                 <div class=" col-6  ">
-                    <button type="submit" name="action" value="approve" class="btn btn-success event-btn__update">Approve</button>
+                    <button type="submit" name="action" value="approve" class="btn manage-btn__approve">Approve</button>
                 </div>
                 <div class="col-6 ">
                     <button type="submit" name="action" value="decline" class="btn btn-danger">Decline</button>
