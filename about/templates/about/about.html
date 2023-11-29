@@ -16,15 +16,72 @@
             <h1 class="main-title">ABOUT PAGE</h1>
         </div>
     </div>
-    <div class="row hero-section">
-        <div class="col-6 hero-section__create d-flex justify-content-center align-items-center">
-            <a href="{% url 'create_event' %}" class="btn btn-primary rounded-0 btn-large px-2 create-event__btn">create event</a>
-        </div>
-        <div class="col-6 hero-section__create d-flex justify-content-center align-items-center">
-            <a href="{% url 'create_event' %}" class="btn btn-primary rounded-0 btn-large px-2 view-events__btn">create events</a>
-        </div>
-    </div>
+    
 </div>
-<a href="{% url 'register' user_type='general' %}" class="btn btn-primary">Register as User</a>
-<a href="{% url 'register' user_type='staff' %}" class="btn btn-secondary">Register as Staff</a>
+
+<br><br><br><br>
+
+<div class="text-about">
+  <h3>Do you ever feel like you just want to take your anger out on something?</h3>
+  <p>Well now you can! Look no further if you feel like you want to beat the living hell out of something.</p>
+  <br>
+  <p>Rage Room is a simple concept, we put you (and friends if applicable) inside a room, give you protective clothing, a weapon and let you smash away at a whole range of items including monitors, printers and glassware.</p>
+  <p>We believe it's the best way to release stress and tension within a controlled environment or just a chance to DESTROY everything you can get your hands on</p>
+</div>
+
+<br><br><br><br><br>
+
+<h2 class="second-title">FAQ</h2>
+<p></p>
+<div class="accordion" id="FAQaccordion">
+    <div class="accordion-item"> <!-- Question 1 -->
+      <h2 class="accordion-header" id="headingOne">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+          How many people can come?
+        </button>
+      </h2>
+      <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+          <strong>You book the room not the people</strong> one room is for up to 4 people, however please note - <strong>only 1 person may rage at a time.</strong> 
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item"> <!-- Question 2 -->
+      <h2 class="accordion-header" id="headingTwo">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+          What should i wear?
+        </button>
+      </h2>
+      <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+          you may wear whatever clothes you want and we provide overalls & safety gear (helmets, safety boots, protective eyewear, gloves) to ensure your rage is safe.
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item"> <!-- Question 3 -->
+      <h2 class="accordion-header" id="headingThree">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+          How do i book a room?
+        </button>
+      </h2>
+      <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+          <a class="nav-buy {% if request.path == events_list_url %}active" aria-current="page{% endif %}" href="{% url 'events-list' %}">You may do so by Clicking Here!</a>
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item"> <!-- Question 4 -->
+      <h2 class="accordion-header" id="headingFour">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+          Can you bring your own stuff to smash?
+        </button>
+      </h2>
+      <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+          Absolutely. You are welcome to bring your own items to destroy. Anything from glassware to small electronics. The largest items we can allow customers to bring along are printers, monitors and TV’s.
+        </div>
+      </div>
+    </div>
+  </div>
+
 {% endblock %}
