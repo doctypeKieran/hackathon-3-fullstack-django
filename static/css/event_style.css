@@ -70,16 +70,3 @@
     background-color: #FE6938;
     color: #fafafa;
 }
-
-/* ------------ Media Queries */
-@media screen and (max-width: 550px) {
-    .event-list-section {
-        padding: 0;
-    }
-}
-
-@media screen and (max-width: 400px) {
-    .event-btn {
-        width: 90%;
-    }
-}
