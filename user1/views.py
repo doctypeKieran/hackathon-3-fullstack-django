@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from .forms import StaffUserCreationForm, GeneralUserCreationForm
 
+
 def register(request,user_type):
     if user_type == 'staff':
         form_class = StaffUserCreationForm

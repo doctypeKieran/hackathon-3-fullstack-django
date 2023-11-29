@@ -19,6 +19,8 @@ USER_ROLES = [
 
 # Create your models here.
 # Adding Models in from ideation 
+
+
 class UserProfile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='user1_profile')
     role = models.CharField(max_length=5, choices=USER_ROLES, default=GENERAL_USER)
@@ -27,10 +29,13 @@ class UserProfile(models.Model):
     phone_number = models.CharField(max_length=15) 
     age = models.PositiveIntegerField(default=0)
     email = models.EmailField(max_length=255)
+
+
     def save(self, *args, **kwargs):
         if self.role == STAFF and not self.badge_number:
             raise ValidationError(_('Staff members must have a badge number.'))
         super(UserProfile, self).save(*args, **kwargs)
+
 
     def __str__(self):
         return f"{self.user.username} - {self.get_role_display()}"
