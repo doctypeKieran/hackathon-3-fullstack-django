@@ -31,6 +31,12 @@ Then there's creating views. This is about making sure there's a place for every
 
 While working on the functionality of the website, we also took this time to develop our wireframes. The site's design will be simple in order to allow us to concentrate on the functionality. The colour scheme is inspired by nature. Many animals, when threatened, display strong and contrasting colours to warn all those around. To show they are frustrated and scared. A rage room is for those who need to vent frustration - to let out their inner animal.  
 
+#### Logic Flow
+![Image of logic flow diagram](static/images/logic-flow.png)
+
+#### Initial Models
+![Image of Initial Model designs](static/images/models.png)
+
 #### Design
 ![Image of desktop home page wireframe](static/images/Web%201920%20–%201.png)
 ![Image of desktop event list page wireframe](static/images/Web%201920%20–%208.png)
