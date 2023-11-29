@@ -1,6 +1,8 @@
 # Rage Room - Booking System   
 #### Hackathon 3 - Full Stack Project   
 
+![Image of desktop home page wireframe](static/images/Web%201920%20–%201.png)  
+
 #### Project Overview 
 The Rage Room booking system is an innovative web application designed to provide a seamless and user-friendly experience for individuals seeking a unique way to vent their frustrations. Targeting professionals aged 25 to 45, this website allows users to view, register, and book for upcoming rage room events. With a focus on intuitive navigation and efficient booking processes, the platform caters to both customers and staff. Customers can easily track their events, while staff members have access to event creation and editing tools, ensuring up-to-date and engaging experiences.
 
@@ -98,10 +100,6 @@ The Rage Room booking system offers a range of features to enhance user experien
 - A link in the footer to access Terms and Conditions.
 - A modal popup displaying the T&Cs when clicked.
 
-![Image of desktop home page wireframe](static/images/Web%201920%20–%201.png)
-
-#### Summary  
-The Rage Room website aims to bring an intuitive experience to their customers. The customers will have the option to view the upcoming events and register to the site in order to book themselves in and keep track of their upcoming events. The staff members will be able to access the event creation and editing features to ensure that the events stay up-to-date.  
 
 #### User Persona  
 - 25 to 45 years old
@@ -138,7 +136,7 @@ While working on the functionality of the website, we also took this time to dev
 ![Image of desktop home page wireframe](static/images/Web%201920%20–%201.png)
 ![Image of desktop event list page wireframe](static/images/Web%201920%20–%208.png)
 ![Image of phone home page wireframe](static/images/iPhone%2014,%2013,%2012%20–%201.png)
-![Image of phone event list page wireframe](static/images/Web%201920%20–%208.png)
+![Image of phone event list page wireframe](static/images/iPhone%2014,%2013,%2012%20–%203.png)
   
     
 ## Day 1 
@@ -191,3 +189,20 @@ Design issues:
 - Code housekeeping 
 - Final deployment
 - Presentation 
+
+#### Tests
+
+
+#### Hackathon Summary
+
+
+#### Validation Checkers
+
+
+#### Testing 
+
+
+#### Future additions
+- Stricter Validation
+- Updated styling for event diary
+- Update title styling
