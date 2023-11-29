@@ -166,6 +166,19 @@ a {
     padding: 3rem;
 }
 
+.manage-btn__approve {
+    border-radius: 0;
+    display: block;
+    width: 100%;
+    height: 3rem;
+    margin: 0 auto;
+    background-color: #000;
+    color: #fafafa;
+    border: 0;
+    margin: 1rem;
+    text-decoration: none;
+}
+
 /* ---------------------------------------------------- Footer */
 .footer__wrapper {
     margin: 2rem 0;
