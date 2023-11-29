@@ -1,6 +1,103 @@
 # Rage Room - Booking System   
 #### Hackathon 3 - Full Stack Project   
 
+#### Project Overview 
+The Rage Room booking system is an innovative web application designed to provide a seamless and user-friendly experience for individuals seeking a unique way to vent their frustrations. Targeting professionals aged 25 to 45, this website allows users to view, register, and book for upcoming rage room events. With a focus on intuitive navigation and efficient booking processes, the platform caters to both customers and staff. Customers can easily track their events, while staff members have access to event creation and editing tools, ensuring up-to-date and engaging experiences.
+
+#### Technology Stack
+This project is built using a robust technology stack that ensures a smooth and responsive user experience:
+
+- **Backend**: Developed with Django, a high-level Python Web framework that encourages rapid development and clean, pragmatic design.
+- **Frontend**: Utilises HTML, CSS, and JavaScript for a dynamic and interactive user interface.
+- **Database**: PostgreSQL, known for its reliability and robustness, is used for efficient data storage and retrieval.
+- **Version Control**: Git and GitHub for collaborative development and version tracking.
+- **Deployment**: The application is deployed on Heroku, a cloud platform service that enables scalable and secure hosting.
+- **Additional Libraries and Frameworks**: Use of Django's built-in libraries, Bootstrap for responsive design, and other utilities as required.
+ 
+#### Usage and Features
+The Rage Room booking system offers a range of features to enhance user experience:
+
+- **Event Browsing**: Users can easily browse through a list of upcoming rage room events.
+- **Registration and Booking**: A streamlined process for user registration and event booking.
+- **User Event-Dairy**: Registered users have access to a personal dashboard to track their bookings and events.
+- **Admin Panel**: An admin panel for staff to create, modify, and manage events.
+- **Responsive Design**: The website is fully responsive, providing a seamless experience on both desktop and mobile devices.
+
+###
+
+#### User Stories and Acceptance Criteria
+
+### 1. User Account Creation
+**As a customer, I can create an account so that I can keep track of my events.**
+
+**Acceptance Criteria:**
+- Registration system for login/logout.
+- Custom user model for customers/general users.
+
+### 2. Intuitive Website Navigation
+**As a user, I can navigate the website intuitively so that I can access the website's pages and features.**
+
+**Acceptance Criteria:**
+- Responsive navbar with links to pages.
+- Dynamic navbar that reveals links based on user authentication.
+- Clean and user-friendly design.
+
+### 3. Access to Important Links
+**As a user, I can easily see links to T&Cs, social, and contact methods so that I can follow Rage Room or get more information if necessary.**
+
+**Acceptance Criteria:**
+- Create a dynamic footer section.
+- Include links to social media, T&Cs, Contact details, and location information.
+
+### 4. Event Browsing and Booking
+**As a user, I can see available and upcoming events so that I can book a session.**
+
+**Acceptance Criteria:**
+- Dynamic list of events on a dedicated page.
+- Options to view and book events.
+
+### 5. Tracking Booked Events
+**As a user, I can keep track of my booked events so that I can easily manage my schedule.**
+
+**Acceptance Criteria:**
+- A page dedicated to booked events.
+- Page updates dynamically with options to view event information.
+
+### 6. Event Management for Staff/Admin
+**As a staff member/admin, I can add, update, and delete events so that the site is up-to-date.**
+
+**Acceptance Criteria:**
+- CRUD functionality for events.
+- Add events page for easy management.
+
+### 7. Learning About Rage Room
+**As a user, I can learn more about Rage Room so that I know they are the right rage room for me.**
+
+**Acceptance Criteria:**
+- An informative About page.
+- Information detailing what Rage Room offers.
+
+### 8. Admin Account Creation
+**As a staff/admin, I can create an account so that I can manage the website effectively.**
+
+**Acceptance Criteria:**
+- Registration process tailored for admin/staff.
+- Access to site features available to admin/staff members.
+
+### 9. Viewing the Gallery
+**As a user, I can see a gallery of images so that I can see what the Rage Room sessions are like.**
+
+**Acceptance Criteria:**
+- A link in the navbar to navigate to the gallery.
+- Responsive gallery with images loaded from static files.
+
+### 10. Accessing Terms and Conditions
+**As a user, I can read the terms and conditions so that I know the rules of the Rage Rooms.**
+
+**Acceptance Criteria:**
+- A link in the footer to access Terms and Conditions.
+- A modal popup displaying the T&Cs when clicked.
+
 ![Image of desktop home page wireframe](static/images/Web%201920%20–%201.png)
 
 #### Summary  
