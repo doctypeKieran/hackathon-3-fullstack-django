@@ -2,23 +2,37 @@
 {% load static %}
 
 {% block content %}
-<h2>Approved Bookings</h2>
-{% for booking in approved_bookings %}
-<div>
-    <p>Event: {{ booking.session.title }}</p>
-    <p>Date: {{ booking.session.date }}</p>
-</div>
-{% empty %}
-<p>No approved bookings.</p>
-{% endfor %}
+<section class="user-bookings-section">
+    <div class="row">
+        <h1 class="user-bookings-title">BOOKINGS</h1>
+    </div>
+    <div class="row">
+        <div class="bg-red bookings approved-bookings">
+            <h2>Approved Bookings</h2>
 
-<h2>Pending Bookings</h2>
-{% for booking in pending_bookings %}
-<div>
-    <p>Event: {{ booking.session.title }}</p>
-    <p>Date: {{ booking.session.date }}</p>
-</div>
-{% empty %}
-<p>No pending bookings.</p>
-{% endfor %}
+            {% for booking in approved_bookings %}
+            <div>
+                <p>Event: {{ booking.session.title }}</p>
+                <p>Date: {{ booking.session.date }}</p>
+            </div>
+            {% empty %}
+            <p>No approved bookings.</p>
+            {% endfor %}
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="bg-pink bookings">
+            <h2>Pending Bookings</h2>
+            {% for booking in pending_bookings %}
+            <div>
+                <p>Event: {{ booking.session.title }}</p>
+                <p>Date: {{ booking.session.date }}</p>
+            </div>
+            {% empty %}
+            <p>No pending bookings.</p>
+            {% endfor %}
+        </div>
+    </div>
+</section>
 {% endblock %}

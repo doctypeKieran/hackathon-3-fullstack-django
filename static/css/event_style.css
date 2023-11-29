@@ -1,3 +1,5 @@
+/* Event List Styles */
+
 .event-list-section {
     margin-top: 4rem;
     padding: 2rem;
@@ -69,4 +71,59 @@
 .bg-orange {
     background-color: #FE6938;
     color: #fafafa;
+}
+
+/* User Bookings Styles */
+
+.user-bookings-section {
+    margin-top: 4rem;
+    padding: 2rem;
+}
+
+.user-bookings-title {
+    font-size: 3rem;
+    color: #fafafa;
+    padding: 0;
+    margin: 0;
+}
+
+.bookings {
+    min-height: 200px;
+    max-height: 100%;
+}
+
+.approved-bookings {
+    margin-top: 3rem;
+}
+
+/* ------------ Media Queries */
+
+/* Event List Media Queries */
+@media screen and (max-width: 550px) {
+    .event-list-section {
+        padding: 0;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .event-btn {
+        width: 90%;
+    }
+}
+
+/* User Bookings Media Queries */
+@media screen and (max-width: 992px) {
+    .user-bookings-section {
+        padding: 1.5rem;
+    }
+
+    .user-bookings-title {
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 300px) {
+    .user-bookings-title {
+        font-size: 2.5rem;
+    }
 }
