@@ -160,6 +160,12 @@ a {
     border: none;
 }
 
+/* ---------------------------------------------------- Manage bookings */
+.booking__card {
+    border-radius: 0;
+    padding: 3rem;
+}
+
 /* ---------------------------------------------------- Footer */
 .footer__wrapper {
     margin: 2rem 0;
