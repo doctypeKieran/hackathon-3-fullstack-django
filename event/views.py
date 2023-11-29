@@ -31,6 +31,7 @@ def create_event(request):
 
 # Create your views here.
 
+
 def view_events(request):
     # Filter when approved field gets added to model
     events = RageRoomSession.objects.all()
@@ -41,17 +42,22 @@ def view_events(request):
     }
 
     return render(request, 'event/event-list.html', context)
+
+
 def join_event(request,event_id):
     if request.method == 'POST':
         event = get_object_or_404(RageRoomSession, id=event_id)
         Booking.objects.create(session=event, participant=request.user.user1_profile)
     return redirect('event-list')
+
+
 def manage_bookings(request):
     if request.user.user1_profile.role == STAFF:
         pending_bookings = Booking.objects.filter(approved=False)
         return render(request, 'event/manage_bookings.html', {'pending_bookings': pending_bookings})
     else:
         return redirect('some_error_page')
+
 
 def approve_booking(request,booking_id):
     if request.user.user1_profile != 'STAFF':
@@ -70,6 +76,7 @@ def approve_booking(request,booking_id):
 
     return redirect('manage_bookings')
 
+
 def user_bookings(request):
     user_profile=request.user.user1_profile
     approve_bookings=Booking.objects.filter(participant=user_profile,approved=True)
@@ -79,6 +86,7 @@ def user_bookings(request):
         'pending_bookings': pending_bookings,
     }
     return render(request, 'event/user_bookings.html', context)
+
 
 def update_event(request, event_id):
     event = get_object_or_404(RageRoomSession, id=event_id)
