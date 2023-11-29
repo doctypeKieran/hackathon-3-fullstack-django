@@ -72,9 +72,9 @@
             {% endif %}
           </ul>
           {% if user.is_authenticated %}
-          <form action="{% url 'logout' %}" method="post">
+          <form action="{% url 'logout' %}" class="flex-lg-row flex-column align-items-center justify-content-center mt-lg-0 mt-3 text-center" method="post">
             {% csrf_token %}
-            <button type="submit" class="btn rounded-0 nav__btn--logout">Logout</button>
+            <button type="submit" class="btn rounded-0 nav__btn--logout mx-auto text-center">Logout</button>
           </form>
           {% else %}
           <div

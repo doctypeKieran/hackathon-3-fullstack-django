@@ -39,7 +39,7 @@ a {
 }
 
 .navbar-brand {
-    font-size: clamp(2rem, 2vw, 3rem);
+    font-size: clamp(2.25rem, 2vw, 3rem);
 }
 
 .nav-link,
@@ -108,11 +108,11 @@ a {
 
 .main-title {
     color: #FAFAFA;
-    font-size: clamp(4rem, 10vw, 8rem);
+    font-size: clamp(2rem, 10vw, 8rem);
     margin: 0;
     padding: 0;
     text-align: left;
-    line-height: 3.25rem;
+    line-height: 3.5rem;
 }
 
 .hero-section__create {
@@ -160,6 +160,12 @@ a {
     border: none;
 }
 
+/* ---------------------------------------------------- Manage bookings */
+.booking__card {
+    border-radius: 0;
+    padding: 3rem;
+}
+
 /* ---------------------------------------------------- Footer */
 .footer__wrapper {
     margin: 2rem 0;
@@ -178,9 +184,11 @@ footer .footer__link {
     border: none;
 }
 
-footer .footer__link:hover {
-    background-color: #000;
-    border: none;
+footer .footer__link:hover,
+footer .footer__link:active,
+footer .footer__link:focus {
+    background-color: #000!important;
+    border: none!important;
 }
 
 /* ---------------------------------------------------- Forms */
@@ -277,6 +285,7 @@ form li,
 
     .main-title {
         text-align: center;
+        line-height: 4rem;
     }
 
 }

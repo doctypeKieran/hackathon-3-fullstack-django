@@ -11,11 +11,13 @@
             <h1 class="main-title">RAGE ROOM</h1>
         </div>
     </div>
-    <div class="row flex-lg-row flex-sm-column justify-content-center align-items-center">
+    {% if user.is_authenticated and user.user1_profile.role == 'STAFF' %}
+    <div class="row flex-lg-row flex-sm-column justify-content-center align-items-center mx-auto">
         <div class="col-lg-6 col-sm-10 hero-section__create d-flex justify-content-center align-items-center">
             <a href="{% url 'create_event' %}" class="btn btn-primary rounded-0 btn-large create-event__btn">create event</a>
         </div>
-        <div class="col-lg-6 col-sm-10 hero-section__view d-flex justify-content-center align-items-center">
+    {% endif %}
+        <div class="col-lg-6 col-sm-10 hero-section__view d-flex justify-content-center align-items-center mx-auto">
             <a href="{% url 'events-list' %}" class="btn btn-primary rounded-0 btn-large view-events__btn">view events</a>
         </div>
     </div>
