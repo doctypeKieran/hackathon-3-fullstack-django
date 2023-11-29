@@ -46,9 +46,6 @@
                   <p>Date: {{ event.date }} | Start: {{ event.start_time }} | End: {{ event.end_time }}</p>
                   <p>Capacity: {{ event.capacity }}</p>
                   <p class="event-description"> {{ event.description }} </p>
-                  {% if event.image %}
-                  <img src="{{ event.image.url }}" alt="Event Image" class="img-fluid">
-                  {% endif %}
                 </div>
                 <div class="modal-footer">
                   {% if event.id in user_bookings %}
