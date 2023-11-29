@@ -152,6 +152,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CSRF_TRUSTED_ORIGINS = [
     'https://*.gitpod.io',
+    'https://*.herokuapp.com',
 ]
 
 LOGIN_REDIRECT_URL = '/'
