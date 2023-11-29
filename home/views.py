@@ -3,6 +3,8 @@ from django.shortcuts import render
 from event.models import RageRoomSession
 
 # Create your views here.
+
+
 def home_page(request):
     events = RageRoomSession.objects.all()  #
     context = {
@@ -12,4 +14,3 @@ def home_page(request):
         request,
         "home/home.html", context
     )
-
