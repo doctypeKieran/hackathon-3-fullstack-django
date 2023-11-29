@@ -103,6 +103,15 @@ a {
     color: #FAFAFA;
 }
 
+.user-info {
+    color: #fafafa;
+    margin: 0;
+}
+
+.user-info strong {
+    color: #ff0000;
+}
+
 
 /* ---------------------------------------------------- Home Page */
 
