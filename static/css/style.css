@@ -19,8 +19,9 @@ body {
     overflow-x: hidden;
 }
 
+
 main {
-    min-height: 80vh;
+    min-height: 100vh;
 }
 
 a {
@@ -155,10 +156,9 @@ a {
 }
 
 /* ---------------------------------------------------- Footer */
-footer {
-    margin: 1rem 0;
+.footer__wrapper {
+    margin: 2rem 0;
 }
-
 .footer__link {
     color: #FAFAFA;
     text-decoration: none;
@@ -168,7 +168,21 @@ footer {
     text-decoration: underline;
 }
 
+footer .footer__link {
+    background-color: #000;
+    border: none;
+}
+
+footer .footer__link:hover {
+    background-color: #000;
+    border: none;
+}
+
 /* ---------------------------------------------------- Forms */
+form {
+    margin-bottom: 1rem 0;
+}
+
 .form__style {
     color: #FAFAFA;
     height: 90vh;
