@@ -26,7 +26,7 @@ class RageRoomSession(models.Model):
     end_time = models.TimeField()
     capacity = models.IntegerField(default=10)  
     image = models.ImageField(upload_to='rage_room_images/', blank=True, null=True)
-    featured_image = CloudinaryField('image', default='placeholder')
+    featured_image = CloudinaryField('image', default='placeholder', null=True, blank=True)
     def __str__(self):
         return f"{self.title} on {self.date}"
 
