@@ -5,20 +5,32 @@
 
 .event-box {
     padding: 2rem;
+    /* height: 100%; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .event-title {
     margin-bottom: 1rem;
 }
 
+.event-image {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
 .event-description {
     line-height: 1.5;
+    margin: 1rem 0;
 }
 
 .event-btn {
     display: block;
     margin: 0 auto;
-    width: 50%;
+    width: 70%;
     height: 3rem;
     background-color: #000;
     color: #fafafa;
@@ -57,4 +69,17 @@
 .bg-orange {
     background-color: #FE6938;
     color: #fafafa;
+}
+
+/* ------------ Media Queries */
+@media screen and (max-width: 550px) {
+    .event-list-section {
+        padding: 0;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .event-btn {
+        width: 90%;
+    }
 }
