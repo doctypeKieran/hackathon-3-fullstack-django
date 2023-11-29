@@ -1,6 +1,8 @@
 # Rage Room - Booking System   
 #### Hackathon 3 - Full Stack Project   
 
+![Image of desktop home page wireframe](static/images/Web%201920%20–%201.png)
+
 #### Summary  
 The Rage Room website aims to bring an intuitive experience to their customers. The customers will have the option to view the upcoming events and register to the site in order to book themselves in and keep track of their upcoming events. The staff members will be able to access the event creation and editing features to ensure that the events stay up-to-date.  
 
@@ -28,6 +30,12 @@ For signing up, making events, and booking them, we need to create some forms. G
 Then there's creating views. This is about making sure there's a place for everything on the site: adding events, changing them, or even getting rid of them if needed. And we can't forget about making sure users can sign up, log in, and manage their profiles easily.  
 
 While working on the functionality of the website, we also took this time to develop our wireframes. The site's design will be simple in order to allow us to concentrate on the functionality. The colour scheme is inspired by nature. Many animals, when threatened, display strong and contrasting colours to warn all those around. To show they are frustrated and scared. A rage room is for those who need to vent frustration - to let out their inner animal.  
+
+#### Design
+![Image of desktop home page wireframe](static/images/Web%201920%20–%201.png)
+![Image of desktop event list page wireframe](static/images/Web%201920%20–%208.png)
+![Image of phone home page wireframe](static/images/iPhone%2014,%2013,%2012%20–%201.png)
+![Image of phone event list page wireframe](static/images/Web%201920%20–%208.png)
   
     
 ## Day 1 
@@ -40,21 +48,43 @@ While working on the functionality of the website, we also took this time to dev
 - Deploy
 
 #### Issues
-User model issues: Connecting our user models across the different file paths proved to be difficult. 
+- User model issues: Connecting our user models across the different file paths proved to be difficult. 
   
-Design issues: In order to achieve the different background colours for our event's list, we will be implementing Django's cycle tag in the for loop. This is something that we have not tried before so will be interesting to see the outcome.  
+- Design issues: In order to achieve the different background colours for our event's list, we will be implementing Django's cycle tag in the for loop. This is something that we have not tried before so will be interesting to see the outcome.  
 Another design issues is the behaviour of our navigation on small screens - the content has been centered in a strange way. This will be solved by adjusting the alignment.
 
-General set up: As with all Django projects, the initial set up takes a while. This process was exacerbated by the mutliple team members. However, thanks to great leadership, communication, and determination the issues were solved efficiently. These issues mainly revolved around installing the correct packages, adding said packages to the requirements.txt file, ensuring every member had a env.py file set up with the correct links etc.   
+- General set up: As with all Django projects, the initial set up takes a while. This process was exacerbated by the mutliple team members. However, thanks to great leadership, communication, and determination the issues were solved efficiently. These issues mainly revolved around installing the correct packages, adding said packages to the requirements.txt file, ensuring every member had a env.py file set up with the correct links etc.   
 
 
 ## Day 2
 #### Targets
 - Build up the majority of the website
-- Add style to website
+- Add style to website: Forms, Event List, Home Page, etc
 - Begin Testing 
 - Bug hunting
+- Deploy
 
 #### Issues
+Design issues:
+- Footer placement. On the majority of our pages, our footer did not stick to the bottom. For larger screens, this has been fixed by adjusting the min-height of the main element and then adjusting each page's height accordingly.  
+
+- Deployment issues - In order for the project to deploy to Heroku, we must ensure that all requirements are included in our requirements.txt and the static files have been collected. Cloudinary has also been set up.
 
 #### Tests
+- Forms. In order for the site to have complete CRUD functionality our event forms need to be working. The main issue we are facing is that the events in the event list arent cooperating unless their capacity is set to 10. The forms are also being affected by the footer issue which is stopping interaction with the buttons. The buttons will be fixed by adjusting the relevant screen heights for all necessary breakpoints.  
+
+- Links. All links in the navbar apart from the gallery are currently taking the user to the correct location. The gallery link will be working once the gallery page is set up and the url path is in place. The active class has not been showing up correctly on each page. This was fixed by changing the active class based on the current url pattern.  
+
+
+## Day 3  
+#### Targets  
+- Finish update bookings page
+- Fix all footer issues
+- View event details modal. View events option available to customers and unregistered guests.
+- Finish about page  
+- Finish gallery page  
+- Code validation
+- Full test 
+- Code housekeeping 
+- Final deployment
+- Presentation 
