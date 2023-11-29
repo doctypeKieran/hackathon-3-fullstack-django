@@ -11,7 +11,7 @@
             <h2>Approved Bookings</h2>
 
             {% for booking in approved_bookings %}
-            <div>
+            <div class="bg-orange">
                 <p>Event: {{ booking.session.title }}</p>
                 <p>Date: {{ booking.session.date }}</p>
             </div>
@@ -25,7 +25,7 @@
         <div class="bg-pink bookings">
             <h2>Pending Bookings</h2>
             {% for booking in pending_bookings %}
-            <div>
+            <div class="bg-orange">
                 <p>Event: {{ booking.session.title }}</p>
                 <p>Date: {{ booking.session.date }}</p>
             </div>
